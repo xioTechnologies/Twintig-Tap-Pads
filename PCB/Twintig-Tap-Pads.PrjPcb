@@ -84,7 +84,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RKYOPUQC
 
 [Document3]
-DocumentPath=3.3V Regulator.SchDoc
+DocumentPath=Voltage Regulator.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -202,22 +202,9 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
-DocumentPath=FSRs.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Twintig-Tap-Pads\Design Rule Check - Twintig-Tap-Pads.html
 DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
 
 [Parameter1]
 Name=Author
