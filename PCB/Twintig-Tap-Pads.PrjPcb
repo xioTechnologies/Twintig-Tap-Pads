@@ -84,7 +84,7 @@ GenerateClassCluster=0
 DocumentUniqueId=RKYOPUQC
 
 [Document3]
-DocumentPath=Voltage Regulator.SchDoc
+DocumentPath=Serial Header.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -98,9 +98,26 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=PAAQKOHC
+DocumentUniqueId=USIMPBSP
 
 [Document4]
+DocumentPath=Voltage Regulator.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=3
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=PAAQKOHC
+
+[Document5]
 DocumentPath=..\..\..\..\..\Open-Source\x-io-Altium-Library\x-io.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -117,7 +134,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BCKSGAQA
 
-[Document5]
+[Document6]
 DocumentPath=..\..\..\..\..\Open-Source\x-io-Altium-Library\x-io.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -134,25 +151,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LVHBYFEG
 
-[Document6]
-DocumentPath=FSRs.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=3
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=UBFWNJEO
-
 [Document7]
-DocumentPath=LEDs.SchDoc
+DocumentPath=FSRs.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -166,9 +166,26 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=GGXARTPA
+DocumentUniqueId=UBFWNJEO
 
 [Document8]
+DocumentPath=LEDs.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=5
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=GGXARTPA
+
+[Document9]
 DocumentPath=Twintig-Tap-Pads.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -185,7 +202,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YETRQERF
 
-[Document9]
+[Document10]
 DocumentPath=x-io.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -204,6 +221,10 @@ DocumentUniqueId=
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Twintig-Tap-Pads\Design Rule Check - Twintig-Tap-Pads.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Twintig-Tap-Pads 8-8-2025 4-03-30 PM.WAS
 DItemRevisionGUID=
 
 [Parameter1]
