@@ -1,4 +1,4 @@
-<config configName="default" projectName="x-IMU3-SA-AX-Firmware" configVersion="1.1" device="PIC32MZ0512EFE064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
+<config configName="default" projectName="x-IMU3-SA-AX-Firmware" configVersion="1.1" device="PIC32MZ0512EFE064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -3486,11 +3486,11 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>4f6f2744576e425cbe5b5f9881f2ad22bec107402a08acbc9ab7d124de93d6f9</hash>
+         <hash>bd08e29cd3930469332d7695baae5e3e83edb8549c0ebe6900ffe73dd7977a47</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
-         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
+         <hash>4d4341a6f9628cea0bf73f980b639f7cb81089e55a60ad7e434be2a71e477442</hash>
       </entry>
       <entry>
          <file>..\src\config\default\exceptions.c</file>
@@ -3498,15 +3498,15 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>9fd4ce68db1801a1b711030b9783f9497c63d044b503486c0a3e8b4483ce72d4</hash>
+         <hash>bc39c827376954ee0f2ae5d90c89279ceacd353d369fd55613ad0774408bf3ed</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
-         <hash>2ff16b289bb356e0792e54539f4a173a84f61a92e3fd0591c97b4a7e0a54c050</hash>
+         <hash>eb296cca8851ff6b0ff3e12adb793af4f9a7f0d834fcace97747423241a4e4b5</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.h</file>
-         <hash>759cce8ff415eadadd85a74232a5023d73e8859a4556ef4beb93c2cfd4b8d8ef</hash>
+         <hash>2b6f3a9da8b2f61b5ea3f584838ad851b151646b5fda0fb709cc05e65576fd37</hash>
       </entry>
       <entry>
          <file>..\src\config\default\p32MZ0512EFE064.ld</file>
