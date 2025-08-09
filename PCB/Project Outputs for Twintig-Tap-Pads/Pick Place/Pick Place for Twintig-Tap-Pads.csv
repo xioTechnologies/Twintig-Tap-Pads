@@ -4,9 +4,9 @@ C:\MyFiles\x-io\Services\MICA Lab\Twintig\Twintig-Tap-Pads\PCB\Project Outputs f
 ========================================================================================================================
 File Design Information:
 
-Date:       08/08/25
-Time:       16:29
-Revision:   07d1fa5bbe1e7176507b09efb4084a68205105af
+Date:       09/08/25
+Time:       12:03
+Revision:   9b0b5dd8c24b86c93223441227bb389a1e676496
 Variant:    No variations
 Units used: mm
 
@@ -37,9 +37,9 @@ Units used: mm
 "R1","56.5000mm","72.0000mm","TopLayer","0","10kR"
 "C9","58.0000mm","84.0000mm","TopLayer","180","100nF"
 "U4","32.0000mm","5.0000mm","TopLayer","180","SK6812MINI-012"
-"U3","49.0000mm","84.0000mm","TopLayer","270","SN74LV1T34DCKR"
+"U3","49.0000mm","85.0000mm","TopLayer","270","SN74LV1T34DCKR"
 "C21","28.0000mm","4.3500mm","TopLayer","270","10uF"
-"C20","49.0000mm","82.0000mm","TopLayer","180","100nF"
+"C20","49.0000mm","83.0000mm","TopLayer","180","100nF"
 "R20","54.0000mm","65.0000mm","TopLayer","90","100kR"
 "R17","52.0000mm","65.0000mm","TopLayer","90","100kR"
 "R14","50.0000mm","65.0000mm","TopLayer","90","100kR"
