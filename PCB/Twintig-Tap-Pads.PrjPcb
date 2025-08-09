@@ -219,14 +219,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for Twintig-Tap-Pads\Design Rule Check - Twintig-Tap-Pads.html
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=Twintig-Tap-Pads 8-8-2025 4-03-30 PM.WAS
-DItemRevisionGUID=
-
 [Parameter1]
 Name=Author
 Value=Seb Madgwick
