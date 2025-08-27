@@ -220,16 +220,16 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Parameter1]
-Name=Author
-Value=Seb Madgwick
+Name=Version
+Value=v1.0.1
 
 [Parameter2]
 Name=Project
 Value=Twintig Tap Pads
 
 [Parameter3]
-Name=Version
-Value=v1.0.0
+Name=Author
+Value=Seb Madgwick
 
 [Configuration1]
 Name=Sources

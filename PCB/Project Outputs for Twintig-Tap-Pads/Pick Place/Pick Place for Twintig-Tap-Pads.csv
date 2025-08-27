@@ -4,18 +4,18 @@ C:\MyFiles\x-io\Services\MICA Lab\Twintig\Twintig-Tap-Pads\PCB\Project Outputs f
 ========================================================================================================================
 File Design Information:
 
-Date:       09/08/25
-Time:       12:24
-Revision:   7a7d904cc6a38a1743e3207f0162e2fdd362e8d0
+Date:       27/08/25
+Time:       09:14
+Revision:   da8f271acc723315d663d0da0a9fb5c494b2919b
 Variant:    No variations
 Units used: mm
 
 "Designator","Center-X(mm)","Center-Y(mm)","Layer","Rotation","Comment"
-"R7","44.5500mm","79.3100mm","TopLayer","0","470R"
-"R5","44.5000mm","76.7700mm","TopLayer","0","470R"
-"R8","44.5000mm","81.8500mm","TopLayer","0","470R"
-"R6","44.5000mm","71.6900mm","TopLayer","0","470R"
-"J3","42.0000mm","75.5000mm","TopLayer","180","Molex 90121-0766"
+"J3","42.0000mm","75.5000mm","TopLayer","0","Molex 90121-0766"
+"R7","44.5000mm","71.6900mm","TopLayer","0","470R"
+"R5","44.5000mm","74.2300mm","TopLayer","0","470R"
+"R8","44.5000mm","69.1500mm","TopLayer","0","470R"
+"R6","44.5000mm","79.3100mm","TopLayer","0","470R"
 "J7","196.0000mm","84.0000mm","TopLayer","180","Molex 90121-0763"
 "J6","196.0000mm","64.0000mm","TopLayer","180","Molex 90121-0763"
 "J5","196.0000mm","44.0000mm","TopLayer","180","Molex 90121-0763"
