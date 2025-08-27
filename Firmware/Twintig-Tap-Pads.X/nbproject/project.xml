@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>Twintig-Tap-Pads</name>
+            <creation-uuid>c11b77e4-70d6-474e-a12f-42d0fe343bbc</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../src/x-io-PIC32-Library</sourceRootElem>
+                <sourceRootElem>../src/Ximu3Device</sourceRootElem>
+                <sourceRootElem>../src/Adc</sourceRootElem>
+                <sourceRootElem>../src/Send</sourceRootElem>
+                <sourceRootElem>../src/Notification</sourceRootElem>
+                <sourceRootElem>../src/Tap</sourceRootElem>
+                <sourceRootElem>../src/Leds</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
