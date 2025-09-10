@@ -125,6 +125,9 @@
         <itemPath>../src/Tap/Tap.h</itemPath>
         <itemPath>../src/Tap/Filter.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="Timestamp" displayName="Timestamp" projectFiles="true">
+        <itemPath>../../../Twintig-Firmware/src/Timestamp/Timestamp.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="x-io-PIC32-Library"
                      displayName="x-io-PIC32-Library"
                      projectFiles="true">
@@ -261,6 +264,9 @@
         <itemPath>../src/Tap/Tap.c</itemPath>
         <itemPath>../src/Tap/Filter.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="Timestamp" displayName="Timestamp" projectFiles="true">
+        <itemPath>../../../Twintig-Firmware/src/Timestamp/Timestamp.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="x-io-PIC32-Library"
                      displayName="x-io-PIC32-Library"
                      projectFiles="true">
@@ -315,6 +321,7 @@
     <Elem>../src/Notification</Elem>
     <Elem>../src/Tap</Elem>
     <Elem>../src/Leds</Elem>
+    <Elem>../../../Twintig-Firmware/src/Timestamp</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -324,7 +331,7 @@
         <targetDevice>PIC32MZ0512EFE064</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>ICD4Tool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>

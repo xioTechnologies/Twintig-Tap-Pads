@@ -9,7 +9,9 @@
 
 #include "Leds/Leds.h"
 #include "Send/Send.h"
+#include <stdint.h>
 #include "Timer/Timer.h"
+#include "Timestamp/Timestamp.h"
 #include "Usb/UsbCdc.h"
 #include "x-IMU3-Device/Ximu3.h"
 
@@ -22,6 +24,7 @@ static void Ping(const char* * const value, Ximu3CommandResponse * const respons
 static void Blink(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Strobe(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context);
+static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Error(const char* const error, void* const context);
 
 //------------------------------------------------------------------------------
@@ -35,6 +38,7 @@ static const Ximu3CommandMap commands[] = {
     {"blink", Blink},
     {"strobe", Strobe},
     {"note", Note},
+    {"timestamp", Timestamp},
 };
 static Ximu3CommandBridge bridge = {
     .interfaces = interfaces,
@@ -129,6 +133,21 @@ static void Note(const char* * const value, Ximu3CommandResponse * const respons
         return;
     }
     SendNotification(string);
+    Ximu3CommandRespond(response);
+}
+
+/**
+ * @brief Timestamp command.
+ * @param value Value.
+ * @param response Response.
+ * @param context Context.
+ */
+void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+    uint64_t timestamp;
+    if (Ximu3CommandParseNumberU64(value, response, &timestamp) != Ximu3ResultOk) {
+        return;
+    }
+    TimestampSet(timestamp);
     Ximu3CommandRespond(response);
 }
 

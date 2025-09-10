@@ -12,7 +12,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
-#include "Timer/Timer.h"
+#include "Timestamp/Timestamp.h"
 #include "Usb/UsbCdc.h"
 #include "Ximu3Device/x-IMU3-Device/Ximu3.h"
 
@@ -48,7 +48,7 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
 
     // Send message
     const Ximu3DataSerialAccessory ximu3Data = {
-        .timestamp = timestamp / TIMER_TICKS_PER_MICROSECOND,
+        .timestamp = TimestampGet(),
         .data = (uint8_t*) string,
         .numberOfBytes = strlen(string),
     };
@@ -73,7 +73,7 @@ void SendNotification(const char* format, ...) {
 
     // Send message
     const Ximu3DataNotification ximu3Data = {
-        .timestamp = TimerGetTicks64() / TIMER_TICKS_PER_MICROSECOND,
+        .timestamp = TimestampGet(),
         .string = string
     };
     uint8_t message[128];
@@ -97,7 +97,7 @@ void SendError(const char* format, ...) {
 
     // Send message
     const Ximu3DataError ximu3Data = {
-        .timestamp = TimerGetTicks64() / TIMER_TICKS_PER_MICROSECOND,
+        .timestamp = TimestampGet(),
         .string = string
     };
     uint8_t message[128];

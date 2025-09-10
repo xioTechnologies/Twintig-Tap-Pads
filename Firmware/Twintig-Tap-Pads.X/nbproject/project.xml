@@ -16,6 +16,7 @@
                 <sourceRootElem>../src/Notification</sourceRootElem>
                 <sourceRootElem>../src/Tap</sourceRootElem>
                 <sourceRootElem>../src/Leds</sourceRootElem>
+                <sourceRootElem>../../../Twintig-Firmware/src/Timestamp</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
