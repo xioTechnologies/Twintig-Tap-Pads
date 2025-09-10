@@ -110,7 +110,7 @@ void TapTasks(void) {
  * @param string String.
  */
 static inline __attribute__((always_inline)) void Detect(uint64_t * const holdoff, const float value, const char* const string, const LedsChannel channel) {
-    if (fabs(value) < 0.1f) {
+    if (value > -0.02f) {
         return;
     }
     *holdoff = TimerGetTicks64() + (250 * TIMER_TICKS_PER_MILLISECOND);
