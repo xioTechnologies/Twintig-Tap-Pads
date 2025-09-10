@@ -83,7 +83,7 @@ void UsbWrite(const void* const data, const size_t numberOfBytes, void* const co
  * @param context Context.
  */
 static void Ping(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    if (Ximu3CommandParseNull(value, response) != 0) {
+    if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
     Ximu3CommandRespondPing(response, "Twintig Tap Pads", "");
@@ -96,7 +96,7 @@ static void Ping(const char* * const value, Ximu3CommandResponse * const respons
  * @param context Context.
  */
 void Blink(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    if (Ximu3CommandParseNull(value, response) != 0) {
+    if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
     LedsBlink(LedsChannelAll, ledsColourWhite);
@@ -110,7 +110,7 @@ void Blink(const char* * const value, Ximu3CommandResponse * const response, voi
  * @param context Context.
  */
 void Strobe(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    if (Ximu3CommandParseNull(value, response) != 0) {
+    if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
     LedsStrobe();
@@ -125,7 +125,7 @@ void Strobe(const char* * const value, Ximu3CommandResponse * const response, vo
  */
 static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     char string[XIMU3_VALUE_SIZE];
-    if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != 0) {
+    if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != Ximu3ResultOk) {
         return;
     }
     SendNotification(string);
