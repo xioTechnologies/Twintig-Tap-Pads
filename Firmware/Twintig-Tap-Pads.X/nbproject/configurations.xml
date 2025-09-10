@@ -183,8 +183,26 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="Twintig-Tap-Pads_default"
+                     displayName="Twintig-Tap-Pads_default"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>Twintig-Tap-Pads_default/components/dfp.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/drv_usbhs_v1.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/rcon.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/usb_device.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/HarmonyCore.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/usb_device_cdc_0.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/core.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/usb_device_cdc.yml</itemPath>
+        </logicalFolder>
+        <itemPath>Twintig-Tap-Pads_default/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>Twintig-Tap-Pads.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

@@ -4,13 +4,13 @@
 
 
 project: Twintig-Tap-Pads
-creation_date: 2025-08-25T16:31:53.625+01:00[Europe/London]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-09-10T23:38:26.137+01:00[Europe/London]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 11
 mcc_mode: IDE            # [IDE|Standalone|Headless]
-mcc_version: v5.5.2
-mcc_core_version: v5.7.1
+mcc_version: v5.6.2
+mcc_core_version: v5.8.2
 mplabx_version: v6.25        # if MPLAB X plugin only
-harmony_version: v1.5.5
+harmony_version: v5.6.2
 compiler: XC32 4.60
 
 modules:
