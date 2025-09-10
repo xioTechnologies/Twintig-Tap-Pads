@@ -78,15 +78,7 @@ void TapTasks(void) {
     }
 
     // Send ADC data as serial accessory message
-    SendSerialAccessory(data.timestamp, "%f,%f,%f,%f,%f,%f,%f,%f\n",
-            data.ch1,
-            data.ch2,
-            data.ch3,
-            data.ch4,
-            data.ch5,
-            data.ch6,
-            data.ch7,
-            data.ch8);
+    //SendSerialAccessory(data.timestamp, "%f,%f,%f,%f,%f,%f,%f,%f\n", data.ch1, data.ch2, data.ch3, data.ch4, data.ch5, data.ch6, data.ch7, data.ch8);
 
     // Detect taps
     static uint64_t holdoff;
