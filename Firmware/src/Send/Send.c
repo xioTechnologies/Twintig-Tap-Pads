@@ -48,7 +48,7 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
 
     // Send message
     const Ximu3DataSerialAccessory ximu3Data = {
-        .timestamp = TimestampGet(),
+        .timestamp = TimestampFrom(timestamp),
         .data = (uint8_t*) string,
         .numberOfBytes = strlen(string),
     };
