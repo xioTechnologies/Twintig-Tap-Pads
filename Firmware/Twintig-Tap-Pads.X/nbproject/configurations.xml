@@ -67,6 +67,9 @@
             <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/default/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="nvm" displayName="nvm" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/nvm/plib_nvm.h</itemPath>
+            </logicalFolder>
             <logicalFolder name="rcon" displayName="rcon" projectFiles="true">
               <itemPath>../src/config/default/peripheral/rcon/plib_rcon.h</itemPath>
             </logicalFolder>
@@ -131,6 +134,9 @@
       <logicalFolder name="x-io-PIC32-Library"
                      displayName="x-io-PIC32-Library"
                      projectFiles="true">
+        <logicalFolder name="LastPage" displayName="LastPage" projectFiles="true">
+          <itemPath>../src/x-io-PIC32-Library/LastPage/LastPage.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="NeoPixels" displayName="NeoPixels" projectFiles="true">
           <itemPath>../src/x-io-PIC32-Library/NeoPixels/BitPattern.h</itemPath>
           <itemPath>../src/x-io-PIC32-Library/NeoPixels/NeoPixels.h</itemPath>
@@ -138,6 +144,11 @@
         </logicalFolder>
         <logicalFolder name="ResetCause" displayName="ResetCause" projectFiles="true">
           <itemPath>../src/x-io-PIC32-Library/ResetCause/ResetCause.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SerialNumber"
+                       displayName="SerialNumber"
+                       projectFiles="true">
+          <itemPath>../src/x-io-PIC32-Library/SerialNumber/SerialNumber.h</itemPath>
         </logicalFolder>
         <logicalFolder name="Spi" displayName="Spi" projectFiles="true">
           <itemPath>../src/x-io-PIC32-Library/Spi/Spi.h</itemPath>
@@ -179,6 +190,7 @@
         </logicalFolder>
         <itemPath>../src/Ximu3Device/Ximu3Device.h</itemPath>
       </logicalFolder>
+      <itemPath>../src/FirmwareVersion.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -192,6 +204,7 @@
           <itemPath>Twintig-Tap-Pads_default/components/rcon.yml</itemPath>
           <itemPath>Twintig-Tap-Pads_default/components/usb_device.yml</itemPath>
           <itemPath>Twintig-Tap-Pads_default/components/HarmonyCore.yml</itemPath>
+          <itemPath>Twintig-Tap-Pads_default/components/nvm.yml</itemPath>
           <itemPath>Twintig-Tap-Pads_default/components/usb_device_cdc_0.yml</itemPath>
           <itemPath>Twintig-Tap-Pads_default/components/core.yml</itemPath>
           <itemPath>Twintig-Tap-Pads_default/components/usb_device_cdc.yml</itemPath>
@@ -241,6 +254,9 @@
             <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/default/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="nvm" displayName="nvm" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/nvm/plib_nvm.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="rcon" displayName="rcon" projectFiles="true">
               <itemPath>../src/config/default/peripheral/rcon/plib_rcon.c</itemPath>
             </logicalFolder>
@@ -278,6 +294,11 @@
       <logicalFolder name="Send" displayName="Send" projectFiles="true">
         <itemPath>../src/Send/Send.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="SerialNumber"
+                     displayName="SerialNumber"
+                     projectFiles="true">
+        <itemPath>../src/x-io-PIC32-Library/SerialNumber/SerialNumber.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="Tap" displayName="Tap" projectFiles="true">
         <itemPath>../src/Tap/Tap.c</itemPath>
         <itemPath>../src/Tap/Filter.c</itemPath>
@@ -288,6 +309,9 @@
       <logicalFolder name="x-io-PIC32-Library"
                      displayName="x-io-PIC32-Library"
                      projectFiles="true">
+        <logicalFolder name="LastPage" displayName="LastPage" projectFiles="true">
+          <itemPath>../src/x-io-PIC32-Library/LastPage/LastPage.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="NeoPixels" displayName="NeoPixels" projectFiles="true">
           <itemPath>../src/x-io-PIC32-Library/NeoPixels/NeoPixels.c</itemPath>
           <itemPath>../src/x-io-PIC32-Library/NeoPixels/NeoPixels1.c</itemPath>
@@ -332,14 +356,8 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../src/x-io-PIC32-Library</Elem>
-    <Elem>../src/Ximu3Device</Elem>
-    <Elem>../src/Adc</Elem>
-    <Elem>../src/Send</Elem>
-    <Elem>../src/Notification</Elem>
-    <Elem>../src/Tap</Elem>
-    <Elem>../src/Leds</Elem>
     <Elem>../../../Twintig-Firmware/src/Timestamp</Elem>
+    <Elem>../src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -349,7 +367,7 @@
         <targetDevice>PIC32MZ0512EFE064</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD4Tool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>3</platform>

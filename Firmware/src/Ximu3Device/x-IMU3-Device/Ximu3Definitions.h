@@ -14,9 +14,9 @@
 
 #define XIMU3_OBJECT_SIZE 1024
 
-#define XIMU3_MAX_KEY_LENGTH 20
+#define XIMU3_MAX_KEY_LENGTH 16
 
-#define XIMU3_NUMBER_OF_SETTINGS 8
+#define XIMU3_NUMBER_OF_SETTINGS 9
 
 #define XIMU3_MUX_HEADER_SIZE 2
 
@@ -26,25 +26,27 @@ typedef enum {
 } Ximu3Result;
 
 typedef struct {
-    char serialNumber[16];
-    char calibrationDate[32];
-    float offset;
-    float sensitivity;
+    char serialNumber[32];
+    char hardwareVersion[16];
     char firmwareVersion[32];
     char deviceName[32];
+    bool highPassFilter;
+    float threshold;
+    uint32_t holdoff;
+    bool sendAdcData;
     bool binaryMode;
-    uint32_t messageRateDivisor;
 } Ximu3SettingsValues;
 
 typedef enum {
     Ximu3SettingsIndexSerialNumber,
-    Ximu3SettingsIndexCalibrationDate,
-    Ximu3SettingsIndexOffset,
-    Ximu3SettingsIndexSensitivity,
+    Ximu3SettingsIndexHardwareVersion,
     Ximu3SettingsIndexFirmwareVersion,
     Ximu3SettingsIndexDeviceName,
+    Ximu3SettingsIndexHighPassFilter,
+    Ximu3SettingsIndexThreshold,
+    Ximu3SettingsIndexHoldoff,
+    Ximu3SettingsIndexSendAdcData,
     Ximu3SettingsIndexBinaryMode,
-    Ximu3SettingsIndexMessageRateDivisor,
 } Ximu3SettingsIndex;
 
 Ximu3Result Ximu3SettingsIndexFrom(Ximu3SettingsIndex * const index, const int integer);

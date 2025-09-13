@@ -1,23 +1,22 @@
 /**
- * @file Ximu3Device.h
+ * @file SerialNumber.h
  * @author Seb Madgwick
- * @brief x-IMU3 device.
+ * @brief Provides the 64-bit serial number of a PIC32MZ device.
  */
 
-#ifndef XIMU3_DEVICE
-#define XIMU3_DEVICE
+#ifndef SERIAL_NUMBER_H
+#define SERIAL_NUMBER_H
 
 //------------------------------------------------------------------------------
 // Includes
 
-#include "x-IMU3-Device/Ximu3.h"
+#include <stdint.h>
 
 //------------------------------------------------------------------------------
 // Function declarations
 
-void Ximu3DeviceInitialise(void);
-void Ximu3DeviceTasks(void);
-const Ximu3SettingsValues* Ximu3DeviceGet(void);
+uint64_t SerialNumberU64(void);
+const char* SerialNumberString(void);
 
 #endif
 

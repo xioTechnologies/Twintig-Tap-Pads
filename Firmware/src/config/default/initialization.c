@@ -219,6 +219,8 @@ void SYS_Initialize ( void* data )
 
 	GPIO_Initialize();
 
+    NVM_Initialize();
+
 
     /* MISRAC 2012 deviation block start */
     /* Following MISRA-C rules deviated in this block  */

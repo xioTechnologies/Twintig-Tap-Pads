@@ -58,6 +58,7 @@
 // *****************************************************************************
 void DRV_USBHS_InterruptHandler( void );
 void DRV_USBHS_DMAInterruptHandler( void );
+void NVM_InterruptHandler( void );
 
 void Timer3InterruptHandler(void);
 void Uart1RxInterruptHandler(void);

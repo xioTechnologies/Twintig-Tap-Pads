@@ -114,7 +114,8 @@ _GEN_EXCPT_ADDR                = _ebase_address + 0x180;
 
 MEMORY
 {
-  kseg0_program_mem     (rx)  : ORIGIN = 0x9D000000, LENGTH = 0x80000
+  kseg0_program_mem     (rx)  : ORIGIN = 0x9D000000, LENGTH = 0x7C000
+  reserved_last_page    (rw)  : ORIGIN = 0x9D07C000, LENGTH = 0x4000
   kseg0_boot_mem              : ORIGIN = 0x9FC004B0, LENGTH = 0x0
   kseg1_boot_mem              : ORIGIN = 0xBFC00000, LENGTH = 0x480
   kseg1_boot_mem_4B0          : ORIGIN = 0xBFC004B0, LENGTH = 0xFA50

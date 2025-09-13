@@ -10,6 +10,7 @@ modules:
 - core
 - dfp
 - drv_usbhs_v1
+- nvm
 - rcon
 - usb_device
 - usb_device_cdc
@@ -18,7 +19,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\configuration.h
   hash: 170d8f7e7eb1799e9d50932711c5d8add9546184663ea13eec789f9fd7926e6c
 - file: ..\src\config\default\definitions.h
-  hash: ddfb3b7614def2679fd1257f21d3302dc913381b886ca0a8e3114bc9da186039
+  hash: 39ada7ab3afb89f129bf0c05bd1572008c32b253a8a33a07a544e7f77eab9b68
 - file: ..\src\config\default\device.h
   hash: 4d4341a6f9628cea0bf73f980b639f7cb81089e55a60ad7e434be2a71e477442
 - file: ..\src\config\default\driver\driver.h
@@ -94,11 +95,11 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\exceptions.c
   hash: 8c1843dacd6aec28ef12be3d763763a268e0facd02d4f1e7d67e21a8d73061d1
 - file: ..\src\config\default\initialization.c
-  hash: 3fd0500093b157edd3eaa2abf16310f70da31dab8f6150190d9bce6d04c25922
+  hash: 132e5f3e7ab9272aafeadb1824c3d9f6cbdadebb16804d0e32c4f8f51aa54253
 - file: ..\src\config\default\interrupts.c
-  hash: d96d17a3671a144e90bfd643d192231b2bda5df8e7519823ebb4f60bc46bed61
+  hash: aff26cc13a80fa7c91c2663b966c6b49f1e037d93028b69e267f679c3d1811e1
 - file: ..\src\config\default\interrupts.h
-  hash: c1547ec3a48973d9aeb23b55738240449b18bee93d7044cc992e6164676fd092
+  hash: 5183e9e5f4a20135a5be7626cc9afd6122ed9b6fb1bbfa4c38480694ed213bfe
 - file: ..\src\config\default\osal\osal.h
   hash: 1cfe3b61d9693b2369922041eef33fe16b3c1ccd9c85d4ded808b805f90a869c
 - file: ..\src\config\default\osal\osal_definitions.h
@@ -112,13 +113,17 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\peripheral\clk\plib_clk.h
   hash: 35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255
 - file: ..\src\config\default\peripheral\evic\plib_evic.c
-  hash: 70312cc3e13a537499dd39079045ae89775b34ebd26324d92ba704157c95ec27
+  hash: 433e787f5f765a1c4a33740680d2945423b4425af671fc53c8b3e88f29e044a7
 - file: ..\src\config\default\peripheral\evic\plib_evic.h
   hash: 65a3d10892934fb1411c206fa87dd2270eb500bc428d2024353b0267aca3e0ae
 - file: ..\src\config\default\peripheral\gpio\plib_gpio.c
   hash: 67937061acf6b5698302ea4146f01475643cd25e9ddf1529f3d89694a7068d8d
 - file: ..\src\config\default\peripheral\gpio\plib_gpio.h
   hash: a584d14652619283d4bf22a477c933e6154ed0c5bc543f0c9a4c4c9fb266e891
+- file: ..\src\config\default\peripheral\nvm\plib_nvm.c
+  hash: a174d49747d3156f9d8dfd252b22920dfcea7fbded0866394d0f07f072c42688
+- file: ..\src\config\default\peripheral\nvm\plib_nvm.h
+  hash: 0344995aa9af075d13b661c015fb6d7dee59512ea231bd087a08967a19686106
 - file: ..\src\config\default\peripheral\rcon\plib_rcon.c
   hash: 4bd00d8b90d58fd729f6ac48a9578b861743231ca040f2be31afb6ed0384e34e
 - file: ..\src\config\default\peripheral\rcon\plib_rcon.h

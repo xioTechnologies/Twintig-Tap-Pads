@@ -15,6 +15,7 @@
 
 #include "Adc/Adc.h"
 #include "definitions.h"
+#include "FirmwareVersion.h"
 #include "Leds/Leds.h"
 #include "NeoPixels/NeoPixels.h"
 #include "Notification/Notification.h"
@@ -43,13 +44,14 @@ int main(void) {
     // Print start up message
     const RCON_RESET_CAUSE resetCause = ResetCauseGet();
     ResetCausePrint(resetCause);
-    printf("Twintig Tap Pads v1.0.0\n");
+    printf("Twintig Tap Pads " FIRMWARE_VERSION "\n");
 
     // Initialise modules
     TimerInitialise();
     AdcInitialise();
     Spi1DmaTxInitialise(&neoPixelsSpiSettings);
     Uart1Initialise(&uartSettingsDefault);
+    Ximu3DeviceInitialise();
 
     // Main program loop
     while (true) {

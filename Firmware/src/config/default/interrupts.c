@@ -76,6 +76,7 @@ void USB_DMA_Handler (void);
 void DMA0_Handler (void);
 void UART2_RX_Handler (void);
 void UART2_TX_Handler (void);
+void FLASH_CONTROL_Handler (void);
 void ADC_EOS_Handler (void);
 
 
@@ -122,6 +123,11 @@ void __attribute__((used)) __ISR(_UART2_RX_VECTOR, ipl1SRS) UART2_RX_Handler (vo
 void __attribute__((used)) __ISR(_UART2_TX_VECTOR, ipl1SRS) UART2_TX_Handler (void)
 {
     Uart2TxInterruptHandler();
+}
+
+void __attribute__((used)) __ISR(_FLASH_CONTROL_VECTOR, ipl1SRS) FLASH_CONTROL_Handler (void)
+{
+    NVM_InterruptHandler();
 }
 
 void __attribute__((used)) __ISR(_ADC_EOS_VECTOR, ipl1SRS) ADC_EOS_Handler (void)

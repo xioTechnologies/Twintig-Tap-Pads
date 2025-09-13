@@ -7,14 +7,8 @@ Ximu3Result Ximu3SettingsIndexFrom(Ximu3SettingsIndex * const index, const int i
         case Ximu3SettingsIndexSerialNumber:
             *index = Ximu3SettingsIndexSerialNumber;
             break;
-        case Ximu3SettingsIndexCalibrationDate:
-            *index = Ximu3SettingsIndexCalibrationDate;
-            break;
-        case Ximu3SettingsIndexOffset:
-            *index = Ximu3SettingsIndexOffset;
-            break;
-        case Ximu3SettingsIndexSensitivity:
-            *index = Ximu3SettingsIndexSensitivity;
+        case Ximu3SettingsIndexHardwareVersion:
+            *index = Ximu3SettingsIndexHardwareVersion;
             break;
         case Ximu3SettingsIndexFirmwareVersion:
             *index = Ximu3SettingsIndexFirmwareVersion;
@@ -22,11 +16,20 @@ Ximu3Result Ximu3SettingsIndexFrom(Ximu3SettingsIndex * const index, const int i
         case Ximu3SettingsIndexDeviceName:
             *index = Ximu3SettingsIndexDeviceName;
             break;
+        case Ximu3SettingsIndexHighPassFilter:
+            *index = Ximu3SettingsIndexHighPassFilter;
+            break;
+        case Ximu3SettingsIndexThreshold:
+            *index = Ximu3SettingsIndexThreshold;
+            break;
+        case Ximu3SettingsIndexHoldoff:
+            *index = Ximu3SettingsIndexHoldoff;
+            break;
+        case Ximu3SettingsIndexSendAdcData:
+            *index = Ximu3SettingsIndexSendAdcData;
+            break;
         case Ximu3SettingsIndexBinaryMode:
             *index = Ximu3SettingsIndexBinaryMode;
-            break;
-        case Ximu3SettingsIndexMessageRateDivisor:
-            *index = Ximu3SettingsIndexMessageRateDivisor;
             break;
         default:
             return Ximu3ResultError;

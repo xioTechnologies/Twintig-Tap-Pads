@@ -9,14 +9,8 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../src/x-io-PIC32-Library</sourceRootElem>
-                <sourceRootElem>../src/Ximu3Device</sourceRootElem>
-                <sourceRootElem>../src/Adc</sourceRootElem>
-                <sourceRootElem>../src/Send</sourceRootElem>
-                <sourceRootElem>../src/Notification</sourceRootElem>
-                <sourceRootElem>../src/Tap</sourceRootElem>
-                <sourceRootElem>../src/Leds</sourceRootElem>
                 <sourceRootElem>../../../Twintig-Firmware/src/Timestamp</sourceRootElem>
+                <sourceRootElem>../src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

@@ -15,6 +15,7 @@
 #include "Tap.h"
 #include "Timer/Timer.h"
 #include "TrueOnce.h"
+#include "Ximu3Device/Ximu3Device.h"
 
 //------------------------------------------------------------------------------
 // Function declarations
@@ -63,14 +64,16 @@ void TapTasks(void) {
     }
 
     // Filter ADC data
-    data.ch1 = FilterUpdate(&ch1Filter, data.ch1);
-    data.ch2 = FilterUpdate(&ch2Filter, data.ch2);
-    data.ch3 = FilterUpdate(&ch3Filter, data.ch3);
-    data.ch4 = FilterUpdate(&ch4Filter, data.ch4);
-    data.ch5 = FilterUpdate(&ch5Filter, data.ch5);
-    data.ch6 = FilterUpdate(&ch6Filter, data.ch6);
-    data.ch7 = FilterUpdate(&ch7Filter, data.ch7);
-    data.ch8 = FilterUpdate(&ch8Filter, data.ch8);
+    if (Ximu3DeviceGet()->highPassFilter) {
+        data.ch1 = FilterUpdate(&ch1Filter, data.ch1);
+        data.ch2 = FilterUpdate(&ch2Filter, data.ch2);
+        data.ch3 = FilterUpdate(&ch3Filter, data.ch3);
+        data.ch4 = FilterUpdate(&ch4Filter, data.ch4);
+        data.ch5 = FilterUpdate(&ch5Filter, data.ch5);
+        data.ch6 = FilterUpdate(&ch6Filter, data.ch6);
+        data.ch7 = FilterUpdate(&ch7Filter, data.ch7);
+        data.ch8 = FilterUpdate(&ch8Filter, data.ch8);
+    }
 
     // Wait for filter outputs to settle
     if (TimerGetTicks64() < TIMER_TICKS_PER_SECOND) {
@@ -78,7 +81,9 @@ void TapTasks(void) {
     }
 
     // Send ADC data as serial accessory message
-    //SendSerialAccessory(data.timestamp, "%f,%f,%f,%f,%f,%f,%f,%f\n", data.ch1, data.ch2, data.ch3, data.ch4, data.ch5, data.ch6, data.ch7, data.ch8);
+    if (Ximu3DeviceGet()->sendAdcData) {
+        SendSerialAccessory(data.timestamp, "%f,%f,%f,%f,%f,%f,%f,%f\n", data.ch1, data.ch2, data.ch3, data.ch4, data.ch5, data.ch6, data.ch7, data.ch8);
+    }
 
     // Detect taps
     static uint64_t holdoff;
@@ -102,10 +107,10 @@ void TapTasks(void) {
  * @param string String.
  */
 static inline __attribute__((always_inline)) void Detect(uint64_t * const holdoff, const float value, const char* const string, const LedsChannel channel) {
-    if (value > -0.02f) {
+    if (value > Ximu3DeviceGet()->threshold) {
         return;
     }
-    *holdoff = TimerGetTicks64() + (250 * TIMER_TICKS_PER_MILLISECOND);
+    *holdoff = TimerGetTicks64() + (Ximu3DeviceGet()->holdoff * TIMER_TICKS_PER_MILLISECOND);
     SendNotification(string);
     LedsBlink(channel, ledsColourCyan);
 }

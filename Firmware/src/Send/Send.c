@@ -15,6 +15,7 @@
 #include "Timestamp/Timestamp.h"
 #include "Usb/UsbCdc.h"
 #include "Ximu3Device/x-IMU3-Device/Ximu3.h"
+#include "Ximu3Device/Ximu3Device.h"
 
 //------------------------------------------------------------------------------
 // Function declarations
@@ -53,7 +54,12 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
         .numberOfBytes = strlen(string),
     };
     char message[256];
-    const size_t messageSize = Ximu3DataSerialAccessoryBinary(message, sizeof (message), &ximu3Data);
+    size_t messageSize;
+    if (Ximu3DeviceGet()->binaryMode) {
+        messageSize = Ximu3DataSerialAccessoryBinary(message, sizeof (message), &ximu3Data);
+    } else {
+        messageSize = Ximu3DataSerialAccessoryAscii(message, sizeof (message), &ximu3Data);
+    }
     SendDataMessage(message, messageSize);
 }
 
@@ -77,7 +83,12 @@ void SendNotification(const char* format, ...) {
         .string = string
     };
     uint8_t message[128];
-    const size_t messageSize = Ximu3DataNotificationBinary(message, sizeof (message), &ximu3Data);
+    size_t messageSize;
+    if (Ximu3DeviceGet()->binaryMode) {
+        messageSize = Ximu3DataNotificationBinary(message, sizeof (message), &ximu3Data);
+    } else {
+        messageSize = Ximu3DataNotificationAscii(message, sizeof (message), &ximu3Data);
+    }
     SendDataMessagePriority(message, messageSize);
 }
 
@@ -101,7 +112,12 @@ void SendError(const char* format, ...) {
         .string = string
     };
     uint8_t message[128];
-    const size_t messageSize = Ximu3DataErrorAscii(message, sizeof (message), &ximu3Data);
+    size_t messageSize;
+    if (Ximu3DeviceGet()->binaryMode) {
+        messageSize = Ximu3DataErrorBinary(message, sizeof (message), &ximu3Data);
+    } else {
+        messageSize = Ximu3DataErrorAscii(message, sizeof (message), &ximu3Data);
+    }
     SendDataMessagePriority(message, messageSize);
 
     // Blink LED
