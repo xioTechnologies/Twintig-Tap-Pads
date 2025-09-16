@@ -124,7 +124,7 @@ void Default(const char* * const value, Ximu3CommandResponse * const response, v
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
-    Ximu3SettingsDefaults(&settings, factoryMode);
+    Ximu3SettingsDefaults(&settings, false);
     Ximu3CommandRespond(response);
 }
 
