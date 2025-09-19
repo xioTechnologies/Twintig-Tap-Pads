@@ -42,8 +42,7 @@ int main(void) {
     Uart2Initialise(&uartSettingsDefault);
 
     // Print start up message
-    const RCON_RESET_CAUSE resetCause = ResetCauseGet();
-    ResetCausePrint(resetCause);
+    ResetCausePrint(ResetCauseGet());
     printf("Twintig Tap Pads " FIRMWARE_VERSION "\n");
 
     // Initialise modules
