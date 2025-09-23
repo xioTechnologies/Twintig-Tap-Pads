@@ -10,7 +10,6 @@
 #include "Adc/Adc.h"
 #include "Periodic.h"
 #include "Send/Send.h"
-#include "Usb/UsbCdc.h"
 
 //------------------------------------------------------------------------------
 // Functions
