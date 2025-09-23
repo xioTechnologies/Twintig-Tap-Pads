@@ -26,7 +26,7 @@ void NotificationTasks(void) {
         return;
     }
 
-    // IMU buffer overflow
+    // ADC buffer overflow
     const uint32_t numberOfSamples = AdcBufferOverflow();
     if (numberOfSamples > 0) {
         SendError("ADC buffer overflow. %u samples lost.", numberOfSamples);

@@ -33,7 +33,7 @@ static size_t bufferOverflow;
 // Functions
 
 /**
- * @brief Sends serial accessory message.
+ * @brief Sends a serial accessory message.
  * @param timestamp Timestamp.
  * @param format Format.
  * @param ... Arguments.
@@ -64,7 +64,7 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
 }
 
 /**
- * @brief Sends notification message.
+ * @brief Sends a notification message.
  * @param format Format.
  * @param ... Arguments.
  */
@@ -93,7 +93,7 @@ void SendNotification(const char* format, ...) {
 }
 
 /**
- * @brief Sends error message.
+ * @brief Sends an error message.
  * @param format Format.
  * @param ... Arguments.
  */
@@ -125,7 +125,7 @@ void SendError(const char* format, ...) {
 }
 
 /**
- * @brief Sends data message.
+ * @brief Sends a data message.
  * @param data Data.
  * @param numberOfBytes Number of bytes.
  */
@@ -134,7 +134,7 @@ static void SendDataMessage(const void* const data, const size_t numberOfBytes) 
 }
 
 /**
- * @brief Sends data message with priority.
+ * @brief Sends a data message with priority.
  * @param data Data.
  * @param numberOfBytes Number of bytes.
  */
@@ -143,7 +143,7 @@ static void SendDataMessagePriority(const void* const data, const size_t numberO
 }
 
 /**
- * @brief Sends response to USB.
+ * @brief Sends a response to USB.
  * @param data Data.
  * @param numberOfBytes Number of bytes.
  */
@@ -152,7 +152,8 @@ void SendResponse(const void* const data, const size_t numberOfBytes) {
 }
 
 /**
- * @brief Writes data and returns number of bytes lost due to buffer overflow.
+ * @brief Writes data and returns the number of bytes lost due to buffer
+ * overflow.
  * @param data Data.
  * @param numberOfBytes Number of bytes.
  * @param priority True to write with priority.
