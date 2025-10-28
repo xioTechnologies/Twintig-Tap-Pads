@@ -33,7 +33,7 @@ static void Strobe(const char* * const value, Ximu3CommandResponse * const respo
 static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Factory(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context);
-static void NvmRead(void* const destination, size_t numberOfBytes, void* const context);
+static void NvmRead(void* const destination, const size_t numberOfBytes, void* const context);
 static void NvmWrite(const void* const data, const size_t numberOfBytes, void* const context);
 static void InitialiseEpilogue(void* const context);
 static void DefaultsEpilogue(void* const context);
@@ -246,7 +246,7 @@ void Timestamp(const char* * const value, Ximu3CommandResponse * const response,
  * @param numberOfBytes Number of bytes.
  * @param context Context.
  */
-void NvmRead(void* const destination, size_t numberOfBytes, void* const context) {
+void NvmRead(void* const destination, const size_t numberOfBytes, void* const context) {
     LastPageRead(destination, numberOfBytes);
 }
 
