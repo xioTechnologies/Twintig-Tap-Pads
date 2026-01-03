@@ -27,10 +27,10 @@ static const char* const keys[] = {
 };
 
 const MetadataType types[] = {
-    MetadataTypeCharArray,
-    MetadataTypeCharArray,
-    MetadataTypeCharArray,
-    MetadataTypeCharArray,
+    MetadataTypeString,
+    MetadataTypeString,
+    MetadataTypeString,
+    MetadataTypeString,
     MetadataTypeBool,
     MetadataTypeFloat,
     MetadataTypeUint32,
