@@ -2,8 +2,7 @@ configVersion: 1.0.0
 coreVersion: 5.8.4
 spaHostVersion: 1.2.1
 device: PIC32MZ0512EFE064
-deviceLibrary:
-  className: com.microchip.mcc.harmony.Harmony3Library
+deviceLibrary: {}
 groupModules: []
 modules:
 - HarmonyCore
@@ -17,9 +16,9 @@ modules:
 - usb_device_cdc_0
 generatedFileHashHistoryMap:
 - file: ..\src\config\default\configuration.h
-  hash: 170d8f7e7eb1799e9d50932711c5d8add9546184663ea13eec789f9fd7926e6c
+  hash: 736d8220630d0ebf7c707e14bc156b88b07919a984542b972d23863d2e38a6e8
 - file: ..\src\config\default\definitions.h
-  hash: 5a9fe11a5472f20755cc6465e998ffcce6a751e88d0730516b84369dcc233914
+  hash: 6fb8add758bd5b8d0da41fc5e99c7fff16895fc56336e12a90b46fc00980a183
 - file: ..\src\config\default\device.h
   hash: 4d4341a6f9628cea0bf73f980b639f7cb81089e55a60ad7e434be2a71e477442
 - file: ..\src\config\default\driver\driver.h
@@ -93,9 +92,9 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\driver\usb\usbhs\src\usbhs_registers.h
   hash: 207c8f185d0c45e59283a0fc3d2683b68447a9507db16a41fbf985184d6ad011
 - file: ..\src\config\default\exceptions.c
-  hash: 8c1843dacd6aec28ef12be3d763763a268e0facd02d4f1e7d67e21a8d73061d1
+  hash: cbda32834108768a3c1789d60185269642dfc70562178bbe6472fdac90ae38f0
 - file: ..\src\config\default\initialization.c
-  hash: 132e5f3e7ab9272aafeadb1824c3d9f6cbdadebb16804d0e32c4f8f51aa54253
+  hash: b4c95c34a1756738f360263bef3d30b9b9be66442f11de9ff966bf65fcdb8cb2
 - file: ..\src\config\default\interrupts.c
   hash: aff26cc13a80fa7c91c2663b966c6b49f1e037d93028b69e267f679c3d1811e1
 - file: ..\src\config\default\interrupts.h
@@ -115,13 +114,13 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\peripheral\evic\plib_evic.c
   hash: 433e787f5f765a1c4a33740680d2945423b4425af671fc53c8b3e88f29e044a7
 - file: ..\src\config\default\peripheral\evic\plib_evic.h
-  hash: 65a3d10892934fb1411c206fa87dd2270eb500bc428d2024353b0267aca3e0ae
+  hash: 2143646bc64063241ab6a7b8f860568eb030339e3de2b0195f7bf9e14f83f94e
 - file: ..\src\config\default\peripheral\gpio\plib_gpio.c
   hash: 67937061acf6b5698302ea4146f01475643cd25e9ddf1529f3d89694a7068d8d
 - file: ..\src\config\default\peripheral\gpio\plib_gpio.h
   hash: a584d14652619283d4bf22a477c933e6154ed0c5bc543f0c9a4c4c9fb266e891
 - file: ..\src\config\default\peripheral\nvm\plib_nvm.c
-  hash: a174d49747d3156f9d8dfd252b22920dfcea7fbded0866394d0f07f072c42688
+  hash: 275ed729e8a972b52adc959ed5b0e23b7096aa61954a652112be87fb602bcd33
 - file: ..\src\config\default\peripheral\nvm\plib_nvm.h
   hash: 0344995aa9af075d13b661c015fb6d7dee59512ea231bd087a08967a19686106
 - file: ..\src\config\default\peripheral\rcon\plib_rcon.c
@@ -149,7 +148,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\default\tasks.c
   hash: 01d7bbde81e2894dcfadf93a6719cca43516d295255f98b89eaf6347673b129e
 - file: ..\src\config\default\toolchain_specifics.h
-  hash: fd2fc7bbe60706409cc0c0a525825c0194f6f71adc0a89e6310041f06dc2f645
+  hash: 6aa2a02b87b7b0f0f0e37b83284e75f1db3857fca365f7a84f7969f71d120c41
 - file: ..\src\config\default\usb\src\usb_device.c
   hash: 25d4e1719a2948619c4f4b38406f896be37bbb74f4b8f631770ca32e1fe45b77
 - file: ..\src\config\default\usb\src\usb_device_cdc.c

@@ -188,7 +188,7 @@ void NVM_Initialize( void )
 
 bool NVM_Read( uint32_t *data, uint32_t length, const uint32_t address )
 {
-    /* MISRA C-2012 Rule 11.6 violated 1 time below. Deviation record ID - H3_MISRAC_2012_R_11_6_DR_1*/
+    /* MISRA C-2023 Rule 11.6 violated 1 time below. Deviation record ID - H3_MISRAC_2023_R_11_6_DR_1*/
     (void)memcpy(data, (uint32_t*)KVA0_TO_KVA1(address), length);
 
     return true;

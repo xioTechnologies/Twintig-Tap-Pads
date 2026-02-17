@@ -4,12 +4,11 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>Twintig-Tap-Pads</name>
-            <creation-uuid>c11b77e4-70d6-474e-a12f-42d0fe343bbc</creation-uuid>
+            <creation-uuid>fd25918e-a962-4d0a-a32c-f308598c3a10</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../../../Twintig-Firmware/src/Timestamp</sourceRootElem>
                 <sourceRootElem>../src</sourceRootElem>
             </sourceRootList>
             <confList>

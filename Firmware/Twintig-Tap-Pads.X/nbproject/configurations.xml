@@ -14,35 +14,35 @@
               <logicalFolder name="usbhs" displayName="usbhs" projectFiles="true">
                 <logicalFolder name="src" displayName="src" projectFiles="true">
                   <logicalFolder name="templates" displayName="templates" projectFiles="true">
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_registers.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Default.h</itemPath>
                     <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Unsupported.h</itemPath>
                     <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_Interrupts_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_registers.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EP0Status_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_SoftReset_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_SoftReset_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_Interrupts_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Default.h</itemPath>
                     <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Unsupported.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Default.h</itemPath>
-                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Unsupported.h</itemPath>
                     <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EP0Status_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_EP0Status_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_Interrupts_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_Interrupts_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_SoftReset_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_SoftReset_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Default.h</itemPath>
+                    <itemPath>../src/config/default/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Unsupported.h</itemPath>
                   </logicalFolder>
-                  <itemPath>../src/config/default/driver/usb/usbhs/src/plib_usbhs_header.h</itemPath>
-                  <itemPath>../src/config/default/driver/usb/usbhs/src/drv_usbhs_local.h</itemPath>
-                  <itemPath>../src/config/default/driver/usb/usbhs/src/usbhs_registers.h</itemPath>
                   <itemPath>../src/config/default/driver/usb/usbhs/src/drv_usbhs_variant_mapping.h</itemPath>
+                  <itemPath>../src/config/default/driver/usb/usbhs/src/drv_usbhs_local.h</itemPath>
                   <itemPath>../src/config/default/driver/usb/usbhs/src/plib_usbhs.h</itemPath>
+                  <itemPath>../src/config/default/driver/usb/usbhs/src/plib_usbhs_header.h</itemPath>
+                  <itemPath>../src/config/default/driver/usb/usbhs/src/usbhs_registers.h</itemPath>
                 </logicalFolder>
                 <itemPath>../src/config/default/driver/usb/usbhs/drv_usbhs.h</itemPath>
               </logicalFolder>
@@ -82,32 +82,32 @@
               <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/default/system/system_module.h</itemPath>
-            <itemPath>../src/config/default/system/system_common.h</itemPath>
             <itemPath>../src/config/default/system/system.h</itemPath>
+            <itemPath>../src/config/default/system/system_common.h</itemPath>
+            <itemPath>../src/config/default/system/system_module.h</itemPath>
           </logicalFolder>
           <logicalFolder name="usb" displayName="usb" projectFiles="true">
             <logicalFolder name="src" displayName="src" projectFiles="true">
               <itemPath>../src/config/default/usb/src/usb_device_local.h</itemPath>
-              <itemPath>../src/config/default/usb/src/usb_external_dependencies.h</itemPath>
-              <itemPath>../src/config/default/usb/src/usb_device_function_driver.h</itemPath>
               <itemPath>../src/config/default/usb/src/usb_device_mapping.h</itemPath>
+              <itemPath>../src/config/default/usb/src/usb_device_function_driver.h</itemPath>
+              <itemPath>../src/config/default/usb/src/usb_external_dependencies.h</itemPath>
               <itemPath>../src/config/default/usb/src/usb_device_cdc_local.h</itemPath>
             </logicalFolder>
-            <itemPath>../src/config/default/usb/usb_hub.h</itemPath>
             <itemPath>../src/config/default/usb/usb_host_client_driver.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_host.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_common.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_cdc.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_device.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_chapter_9.h</itemPath>
             <itemPath>../src/config/default/usb/usb_host_hub_interface.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_host.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_hub.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_device.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_common.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_chapter_9.h</itemPath>
             <itemPath>../src/config/default/usb/usb_device_cdc.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_cdc.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
-          <itemPath>../src/config/default/interrupts.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
+          <itemPath>../src/config/default/interrupts.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/sys_tasks.h</itemPath>
@@ -125,11 +125,11 @@
         <itemPath>../src/Send/Send.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Tap" displayName="Tap" projectFiles="true">
-        <itemPath>../src/Tap/Tap.h</itemPath>
         <itemPath>../src/Tap/Filter.h</itemPath>
+        <itemPath>../src/Tap/Tap.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Timestamp" displayName="Timestamp" projectFiles="true">
-        <itemPath>../../../Twintig-Firmware/src/Timestamp/Timestamp.h</itemPath>
+        <itemPath>../src/Timestamp/Timestamp.h</itemPath>
       </logicalFolder>
       <logicalFolder name="x-io-PIC32-Library"
                      displayName="x-io-PIC32-Library"
@@ -167,8 +167,8 @@
         </logicalFolder>
         <itemPath>../src/x-io-PIC32-Library/Config.h</itemPath>
         <itemPath>../src/x-io-PIC32-Library/Fifo.h</itemPath>
-        <itemPath>../src/x-io-PIC32-Library/PeripheralBusClockFrequency.h</itemPath>
         <itemPath>../src/x-io-PIC32-Library/Periodic.h</itemPath>
+        <itemPath>../src/x-io-PIC32-Library/PeripheralBusClockFrequency.h</itemPath>
         <itemPath>../src/x-io-PIC32-Library/TrueOnce.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Ximu3Device" displayName="Ximu3Device" projectFiles="true">
@@ -238,8 +238,8 @@
             <logicalFolder name="usb" displayName="usb" projectFiles="true">
               <logicalFolder name="usbhs" displayName="usbhs" projectFiles="true">
                 <logicalFolder name="src" displayName="src" projectFiles="true">
-                  <itemPath>../src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c</itemPath>
                   <itemPath>../src/config/default/driver/usb/usbhs/src/drv_usbhs.c</itemPath>
+                  <itemPath>../src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
@@ -271,14 +271,14 @@
           </logicalFolder>
           <logicalFolder name="usb" displayName="usb" projectFiles="true">
             <logicalFolder name="src" displayName="src" projectFiles="true">
-              <itemPath>../src/config/default/usb/src/usb_device_cdc.c</itemPath>
               <itemPath>../src/config/default/usb/src/usb_device.c</itemPath>
+              <itemPath>../src/config/default/usb/src/usb_device_cdc.c</itemPath>
               <itemPath>../src/config/default/usb/src/usb_device_cdc_acm.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/default/exceptions.c</itemPath>
           <itemPath>../src/config/default/initialization.c</itemPath>
           <itemPath>../src/config/default/interrupts.c</itemPath>
+          <itemPath>../src/config/default/exceptions.c</itemPath>
           <itemPath>../src/config/default/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/default/tasks.c</itemPath>
         </logicalFolder>
@@ -294,17 +294,12 @@
       <logicalFolder name="Send" displayName="Send" projectFiles="true">
         <itemPath>../src/Send/Send.c</itemPath>
       </logicalFolder>
-      <logicalFolder name="SerialNumber"
-                     displayName="SerialNumber"
-                     projectFiles="true">
-        <itemPath>../src/x-io-PIC32-Library/SerialNumber/SerialNumber.c</itemPath>
-      </logicalFolder>
       <logicalFolder name="Tap" displayName="Tap" projectFiles="true">
-        <itemPath>../src/Tap/Tap.c</itemPath>
         <itemPath>../src/Tap/Filter.c</itemPath>
+        <itemPath>../src/Tap/Tap.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Timestamp" displayName="Timestamp" projectFiles="true">
-        <itemPath>../../../Twintig-Firmware/src/Timestamp/Timestamp.c</itemPath>
+        <itemPath>../src/Timestamp/Timestamp.c</itemPath>
       </logicalFolder>
       <logicalFolder name="x-io-PIC32-Library"
                      displayName="x-io-PIC32-Library"
@@ -318,6 +313,11 @@
         </logicalFolder>
         <logicalFolder name="ResetCause" displayName="ResetCause" projectFiles="true">
           <itemPath>../src/x-io-PIC32-Library/ResetCause/ResetCause.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SerialNumber"
+                       displayName="SerialNumber"
+                       projectFiles="true">
+          <itemPath>../src/x-io-PIC32-Library/SerialNumber/SerialNumber.c</itemPath>
         </logicalFolder>
         <logicalFolder name="Spi" displayName="Spi" projectFiles="true">
           <itemPath>../src/x-io-PIC32-Library/Spi/Spi.c</itemPath>
@@ -356,7 +356,6 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../../../Twintig-Firmware/src/Timestamp</Elem>
     <Elem>../src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
@@ -369,7 +368,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.60</languageToolchainVersion>
+        <languageToolchainVersion>5.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -403,7 +402,7 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <C32>
-        <property key="additional-warnings" value="true"/>
+        <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
@@ -424,7 +423,7 @@
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
         <property key="keep-inline" value="false"/>
-        <property key="make-warnings-into-errors" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
         <property key="oXC16gcc-errata" value=""/>
         <property key="oXC16gcc-large-aggregate" value="false"/>
         <property key="oXC16gcc-mpa-lvl" value=""/>
@@ -575,256 +574,6 @@
         <property key="wpo-lto" value="false"/>
         <appendMe value="-Wstrict-prototypes"/>
       </C32Global>
-      <ICD4Tool>
-        <property key="ADC" value="true"/>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="CHANGE NOTICE B" value="true"/>
-        <property key="CHANGE NOTICE C" value="true"/>
-        <property key="CHANGE NOTICE D" value="true"/>
-        <property key="CHANGE NOTICE E" value="true"/>
-        <property key="CHANGE NOTICE F" value="true"/>
-        <property key="CHANGE NOTICE G" value="true"/>
-        <property key="COMPARATOR" value="true"/>
-        <property key="DMA" value="true"/>
-        <property key="ETHERNET CONTROLLER" value="true"/>
-        <property key="Freeze All Other Peripherals" value="true"/>
-        <property key="I2C 1" value="true"/>
-        <property key="I2C 3" value="true"/>
-        <property key="I2C 4" value="true"/>
-        <property key="I2C 5" value="true"/>
-        <property key="INPUT CAPTURE 1" value="true"/>
-        <property key="INPUT CAPTURE 2" value="true"/>
-        <property key="INPUT CAPTURE 3" value="true"/>
-        <property key="INPUT CAPTURE 4" value="true"/>
-        <property key="INPUT CAPTURE 5" value="true"/>
-        <property key="INPUT CAPTURE 6" value="true"/>
-        <property key="INPUT CAPTURE 7" value="true"/>
-        <property key="INPUT CAPTURE 8" value="true"/>
-        <property key="INPUT CAPTURE 9" value="true"/>
-        <property key="INTERRUPT CONTROL" value="true"/>
-        <property key="OUTPUT COMPARE 1" value="true"/>
-        <property key="OUTPUT COMPARE 2" value="true"/>
-        <property key="OUTPUT COMPARE 3" value="true"/>
-        <property key="OUTPUT COMPARE 4" value="true"/>
-        <property key="OUTPUT COMPARE 5" value="true"/>
-        <property key="OUTPUT COMPARE 6" value="true"/>
-        <property key="OUTPUT COMPARE 7" value="true"/>
-        <property key="OUTPUT COMPARE 8" value="true"/>
-        <property key="OUTPUT COMPARE 9" value="true"/>
-        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
-        <property key="REAL TIME CLOCK" value="true"/>
-        <property key="REFERENCE CLOCK1" value="true"/>
-        <property key="REFERENCE CLOCK2" value="true"/>
-        <property key="REFERENCE CLOCK3" value="true"/>
-        <property key="REFERENCE CLOCK4" value="true"/>
-        <property key="SPI/I2S 1" value="true"/>
-        <property key="SPI/I2S 2" value="true"/>
-        <property key="SPI/I2S 3" value="true"/>
-        <property key="SPI/I2S 4" value="true"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="TIMER1" value="true"/>
-        <property key="TIMER2" value="true"/>
-        <property key="TIMER3" value="true"/>
-        <property key="TIMER4" value="true"/>
-        <property key="TIMER5" value="true"/>
-        <property key="TIMER6" value="true"/>
-        <property key="TIMER7" value="true"/>
-        <property key="TIMER8" value="true"/>
-        <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions"
-                  value="ToolFirmwareOption.UseLatest"/>
-        <property key="ToolFirmwareToolPack"
-                  value="Press to select which tool pack to use"/>
-        <property key="UART1" value="true"/>
-        <property key="UART2" value="true"/>
-        <property key="UART3" value="true"/>
-        <property key="UART4" value="true"/>
-        <property key="UART5" value="true"/>
-        <property key="UART6" value="true"/>
-        <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface"
-                  value="${communication.interface.default}"/>
-        <property key="communication.interface.jtag" value="2wire"/>
-        <property key="communication.speed" value="${communication.speed.default}"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="debugoptions.simultaneous.debug" value="false"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="event.recorder.debugger.behavior" value="Running"/>
-        <property key="event.recorder.enabled" value="false"/>
-        <property key="event.recorder.scvd.files" value=""/>
-        <property key="hwtoolclock.frcindebug" value="false"/>
-        <property key="lastid" value=""/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.configurationmemory2" value="true"/>
-        <property key="memories.dataflash" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.exclude.configurationmemory" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
-        <property key="poweroptions.powerenable" value="false"/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.ledbrightness" value="5"/>
-        <property key="programoptions.pgcconfig" value="pull down"/>
-        <property key="programoptions.pgcresistor.value" value="4.7"/>
-        <property key="programoptions.pgdconfig" value="pull down"/>
-        <property key="programoptions.pgdresistor.value" value="4.7"/>
-        <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
-        <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.program.otpconfig" value="false"/>
-        <property key="programoptions.programcalmem" value="false"/>
-        <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.smart.program" value="When debugging only"/>
-        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="toolpack.updateoptions"
-                  value="toolpack.updateoptions.uselatestoolpack"/>
-        <property key="toolpack.updateoptions.packversion"
-                  value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.25"/>
-      </ICD4Tool>
-      <Tool>
-        <property key="ADC" value="true"/>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="CHANGE NOTICE B" value="true"/>
-        <property key="CHANGE NOTICE C" value="true"/>
-        <property key="CHANGE NOTICE D" value="true"/>
-        <property key="CHANGE NOTICE E" value="true"/>
-        <property key="CHANGE NOTICE F" value="true"/>
-        <property key="CHANGE NOTICE G" value="true"/>
-        <property key="COMPARATOR" value="true"/>
-        <property key="DMA" value="true"/>
-        <property key="ETHERNET CONTROLLER" value="true"/>
-        <property key="Freeze All Other Peripherals" value="true"/>
-        <property key="I2C 1" value="true"/>
-        <property key="I2C 3" value="true"/>
-        <property key="I2C 4" value="true"/>
-        <property key="I2C 5" value="true"/>
-        <property key="INPUT CAPTURE 1" value="true"/>
-        <property key="INPUT CAPTURE 2" value="true"/>
-        <property key="INPUT CAPTURE 3" value="true"/>
-        <property key="INPUT CAPTURE 4" value="true"/>
-        <property key="INPUT CAPTURE 5" value="true"/>
-        <property key="INPUT CAPTURE 6" value="true"/>
-        <property key="INPUT CAPTURE 7" value="true"/>
-        <property key="INPUT CAPTURE 8" value="true"/>
-        <property key="INPUT CAPTURE 9" value="true"/>
-        <property key="INTERRUPT CONTROL" value="true"/>
-        <property key="OUTPUT COMPARE 1" value="true"/>
-        <property key="OUTPUT COMPARE 2" value="true"/>
-        <property key="OUTPUT COMPARE 3" value="true"/>
-        <property key="OUTPUT COMPARE 4" value="true"/>
-        <property key="OUTPUT COMPARE 5" value="true"/>
-        <property key="OUTPUT COMPARE 6" value="true"/>
-        <property key="OUTPUT COMPARE 7" value="true"/>
-        <property key="OUTPUT COMPARE 8" value="true"/>
-        <property key="OUTPUT COMPARE 9" value="true"/>
-        <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
-        <property key="REAL TIME CLOCK" value="true"/>
-        <property key="REFERENCE CLOCK1" value="true"/>
-        <property key="REFERENCE CLOCK2" value="true"/>
-        <property key="REFERENCE CLOCK3" value="true"/>
-        <property key="REFERENCE CLOCK4" value="true"/>
-        <property key="SPI/I2S 1" value="true"/>
-        <property key="SPI/I2S 2" value="true"/>
-        <property key="SPI/I2S 3" value="true"/>
-        <property key="SPI/I2S 4" value="true"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
-        <property key="TIMER1" value="true"/>
-        <property key="TIMER2" value="true"/>
-        <property key="TIMER3" value="true"/>
-        <property key="TIMER4" value="true"/>
-        <property key="TIMER5" value="true"/>
-        <property key="TIMER6" value="true"/>
-        <property key="TIMER7" value="true"/>
-        <property key="TIMER8" value="true"/>
-        <property key="TIMER9" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions"
-                  value="ToolFirmwareOption.UseLatest"/>
-        <property key="ToolFirmwareToolPack"
-                  value="Press to select which tool pack to use"/>
-        <property key="UART1" value="true"/>
-        <property key="UART2" value="true"/>
-        <property key="UART3" value="true"/>
-        <property key="UART4" value="true"/>
-        <property key="UART5" value="true"/>
-        <property key="UART6" value="true"/>
-        <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface"
-                  value="${communication.interface.default}"/>
-        <property key="communication.interface.jtag" value="2wire"/>
-        <property key="communication.speed" value="${communication.speed.default}"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="debugoptions.simultaneous.debug" value="false"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="event.recorder.debugger.behavior" value="Running"/>
-        <property key="event.recorder.enabled" value="false"/>
-        <property key="event.recorder.scvd.files" value=""/>
-        <property key="hwtoolclock.frcindebug" value="false"/>
-        <property key="lastid" value=""/>
-        <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.configurationmemory2" value="true"/>
-        <property key="memories.dataflash" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.exclude.configurationmemory" value="true"/>
-        <property key="memories.flashdata" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
-        <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/MyFiles/x-io/Services/MICA Lab/Twintig/Twintig-Tap-Pads/Firmware/Twintig-Tap-Pads.X/debug/default/Twintig-Tap-Pads_ptg"/>
-        <property key="programoptions.donoteraseauxmem" value="false"/>
-        <property key="programoptions.eraseb4program" value="true"/>
-        <property key="programoptions.ledbrightness" value="5"/>
-        <property key="programoptions.pgcconfig" value="pull down"/>
-        <property key="programoptions.pgcresistor.value" value="4.7"/>
-        <property key="programoptions.pgdconfig" value="pull down"/>
-        <property key="programoptions.pgdresistor.value" value="4.7"/>
-        <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="Med"/>
-        <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
-        <property key="programoptions.preserveeeprom" value="false"/>
-        <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
-        <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveuserid" value="false"/>
-        <property key="programoptions.program.otpconfig" value="false"/>
-        <property key="programoptions.programcalmem" value="false"/>
-        <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.smart.program" value="When debugging only"/>
-        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="toolpack.updateoptions"
-                  value="toolpack.updateoptions.uselatestoolpack"/>
-        <property key="toolpack.updateoptions.packversion"
-                  value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.25"/>
-      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
