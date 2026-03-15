@@ -100,7 +100,7 @@ void Ximu3DeviceTasks(void) {
  * @param context Context.
  * @return Number of bytes read.
  */
-size_t UsbRead(void* const destination, size_t numberOfBytes, void* const context) {
+static size_t UsbRead(void* const destination, size_t numberOfBytes, void* const context) {
     return UsbCdcRead(destination, numberOfBytes);
 }
 
@@ -110,7 +110,7 @@ size_t UsbRead(void* const destination, size_t numberOfBytes, void* const contex
  * @param numberOfBytes Number of bytes.
  * @param context Context.
  */
-void UsbWrite(const void* const data, const size_t numberOfBytes, void* const context) {
+static void UsbWrite(const void* const data, const size_t numberOfBytes, void* const context) {
     SendResponse(data, numberOfBytes);
 }
 
@@ -120,7 +120,7 @@ void UsbWrite(const void* const data, const size_t numberOfBytes, void* const co
  * @param response Response.
  * @param context Context.
  */
-void Default(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+static void Default(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
@@ -134,7 +134,7 @@ void Default(const char* * const value, Ximu3CommandResponse * const response, v
  * @param response Response.
  * @param context Context.
  */
-void Apply(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+static void Apply(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
@@ -147,7 +147,7 @@ void Apply(const char* * const value, Ximu3CommandResponse * const response, voi
  * @param response Response.
  * @param context Context.
  */
-void Save(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+static void Save(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
@@ -174,7 +174,7 @@ static void Ping(const char* * const value, Ximu3CommandResponse * const respons
  * @param response Response.
  * @param context Context.
  */
-void Blink(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+static void Blink(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
@@ -188,7 +188,7 @@ void Blink(const char* * const value, Ximu3CommandResponse * const response, voi
  * @param response Response.
  * @param context Context.
  */
-void Strobe(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+static void Strobe(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
@@ -231,7 +231,7 @@ static void Factory(const char* * const value, Ximu3CommandResponse * const resp
  * @param response Response.
  * @param context Context.
  */
-void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
     uint64_t timestamp;
     if (Ximu3CommandParseNumberU64(value, response, &timestamp) != Ximu3ResultOk) {
         return;
@@ -246,7 +246,7 @@ void Timestamp(const char* * const value, Ximu3CommandResponse * const response,
  * @param numberOfBytes Number of bytes.
  * @param context Context.
  */
-void NvmRead(void* const destination, const size_t numberOfBytes, void* const context) {
+static void NvmRead(void* const destination, const size_t numberOfBytes, void* const context) {
     LastPageRead(destination, numberOfBytes);
 }
 
@@ -256,7 +256,7 @@ void NvmRead(void* const destination, const size_t numberOfBytes, void* const co
  * @param numberOfBytes Number of bytes.
  * @param context Context.
  */
-void NvmWrite(const void* const data, const size_t numberOfBytes, void* const context) {
+static void NvmWrite(const void* const data, const size_t numberOfBytes, void* const context) {
     LastPageUpdate(data, numberOfBytes);
 }
 
@@ -288,7 +288,7 @@ static void DefaultsEpilogue(void* const context) {
  * @brief Returns true if factory mode enabled.
  * @return True if factory mode enabled.
  */
-bool OverrideReadOnly(void* const context) {
+static bool OverrideReadOnly(void* const context) {
     return factoryMode;
 }
 
