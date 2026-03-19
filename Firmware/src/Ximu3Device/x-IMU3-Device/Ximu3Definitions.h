@@ -14,9 +14,9 @@
 
 #define XIMU3_OBJECT_SIZE 1024
 
-#define XIMU3_MAX_KEY_LENGTH 16
+#define XIMU3_MAX_KEY_LENGTH 18
 
-#define XIMU3_NUMBER_OF_SETTINGS 9
+#define XIMU3_NUMBER_OF_SETTINGS 11
 
 #define XIMU3_MUX_HEADER_SIZE 2
 
@@ -26,8 +26,10 @@ typedef enum {
 } Ximu3Result;
 
 typedef struct {
+    char model[32];
     char serialNumber[32];
-    char hardwareVersion[16];
+    char hardwareVersion[32];
+    char bootloaderVersion[32];
     char firmwareVersion[32];
     char deviceName[32];
     bool highPassFilter;
@@ -38,8 +40,10 @@ typedef struct {
 } Ximu3SettingsValues;
 
 typedef enum {
+    Ximu3SettingsIndexModel,
     Ximu3SettingsIndexSerialNumber,
     Ximu3SettingsIndexHardwareVersion,
+    Ximu3SettingsIndexBootloaderVersion,
     Ximu3SettingsIndexFirmwareVersion,
     Ximu3SettingsIndexDeviceName,
     Ximu3SettingsIndexHighPassFilter,

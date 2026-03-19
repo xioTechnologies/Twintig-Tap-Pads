@@ -3,8 +3,10 @@
 #include "Metadata.h"
 
 static const char* const names[] = {
+    "Model",
     "Serial Number",
     "Hardware Version",
+    "Bootloader Version",
     "Firmware Version",
     "Device Name",
     "High-pass Filter",
@@ -15,8 +17,10 @@ static const char* const names[] = {
 };
 
 static const char* const keys[] = {
+    "model",
     "serial_number",
     "hardware_version",
+    "bootloader_version",
     "firmware_version",
     "device_name",
     "high_pass_filter",
@@ -31,6 +35,8 @@ const MetadataType types[] = {
     MetadataTypeString,
     MetadataTypeString,
     MetadataTypeString,
+    MetadataTypeString,
+    MetadataTypeString,
     MetadataTypeBool,
     MetadataTypeFloat,
     MetadataTypeUint32,
@@ -39,8 +45,10 @@ const MetadataType types[] = {
 };
 
 const size_t sizes[] = {
+    sizeof (((Ximu3SettingsValues *) 0)->model),
     sizeof (((Ximu3SettingsValues *) 0)->serialNumber),
     sizeof (((Ximu3SettingsValues *) 0)->hardwareVersion),
+    sizeof (((Ximu3SettingsValues *) 0)->bootloaderVersion),
     sizeof (((Ximu3SettingsValues *) 0)->firmwareVersion),
     sizeof (((Ximu3SettingsValues *) 0)->deviceName),
     sizeof (((Ximu3SettingsValues *) 0)->highPassFilter),
@@ -51,8 +59,10 @@ const size_t sizes[] = {
 };
 
 const void* const defaults[] = {
+    (void*) (&(char[32]) {"Twintig Pad Pads"}),
     (void*) (&(char[32]) {"Unknown"}),
-    (void*) (&(char[16]) {"Unknown"}),
+    (void*) (&(char[32]) {"Unknown"}),
+    (void*) (&(char[32]) {"Unknown"}),
     (void*) (&(char[32]) {"Unknown"}),
     (void*) (&(char[32]) {"Twintig Tap Pads"}),
     (void*) (&(bool) {true}),
@@ -63,6 +73,8 @@ const void* const defaults[] = {
 };
 
 const bool preserveds[] = {
+    true,
+    true,
     true,
     true,
     false,
@@ -78,6 +90,8 @@ const bool readOnlys[] = {
     true,
     true,
     true,
+    true,
+    true,
     false,
     false,
     false,
@@ -88,10 +102,14 @@ const bool readOnlys[] = {
 
 static void* GetValue(Ximu3Settings * const settings, const Ximu3SettingsIndex index) {
     switch (index) {
+        case Ximu3SettingsIndexModel:
+            return &settings->values.model;
         case Ximu3SettingsIndexSerialNumber:
             return &settings->values.serialNumber;
         case Ximu3SettingsIndexHardwareVersion:
             return &settings->values.hardwareVersion;
+        case Ximu3SettingsIndexBootloaderVersion:
+            return &settings->values.bootloaderVersion;
         case Ximu3SettingsIndexFirmwareVersion:
             return &settings->values.firmwareVersion;
         case Ximu3SettingsIndexDeviceName:

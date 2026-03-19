@@ -5,6 +5,12 @@
     ],
     "settings": [
         {
+            "name": "Model",
+            "declaration": "char name[32]",
+            "default": "{\"Twintig Pad Pads\"}",
+            "preserved": true
+        },
+        {
             "name": "Serial number",
             "declaration": "char name[32]",
             "default": "{\"Unknown\"}",
@@ -12,7 +18,13 @@
         },
         {
             "name": "Hardware version",
-            "declaration": "char name[16]",
+            "declaration": "char name[32]",
+            "default": "{\"Unknown\"}",
+            "preserved": true
+        },
+        {
+            "name": "Bootloader version",
+            "declaration": "char name[32]",
             "default": "{\"Unknown\"}",
             "preserved": true
         },
@@ -25,8 +37,7 @@
         {
             "name": "Device name",
             "declaration": "char name[32]",
-            "default": "{\"Twintig Tap Pads\"}",
-            "read-only": false
+            "default": "{\"Twintig Tap Pads\"}"
         },
         {
             "name": "High-pass filter",
