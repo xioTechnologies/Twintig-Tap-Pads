@@ -39,7 +39,7 @@ typedef enum {
 } AdcResult;
 
 //------------------------------------------------------------------------------
-// Function prototypes
+// Function declarations
 
 void AdcInitialise(void);
 AdcResult AdcGetData(AdcData * const data);

@@ -20,7 +20,7 @@ typedef struct {
 } Filter;
 
 //------------------------------------------------------------------------------
-// Function prototypes
+// Function declarations
 
 void FilterSetCutoff(Filter * const filter, const float sampleRate, const float cutoff);
 float FilterUpdate(Filter * const filter, const float input);

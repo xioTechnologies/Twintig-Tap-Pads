@@ -18,6 +18,7 @@
  * @param cutoff Cutoff in Hz.
  * @param filter Filter structure.
  * @param sampleRate Sample rate in Hz.
+ * @param cutoff Cutoff frequency rate in Hz.
  */
 void FilterSetCutoff(Filter * const filter, const float sampleRate, const float cutoff) {
     filter->coefficient = 1.0f / ((2.0f * M_PI * cutoff * (1.0f / sampleRate)) + 1.0f);

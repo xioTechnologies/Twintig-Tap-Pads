@@ -41,7 +41,7 @@ int main(void) {
     // Initialise debug UART
     Uart2Initialise(&uartSettingsDefault);
 
-    // Print start up message
+    // Print startup message
     ResetCausePrint(ResetCauseGet());
     printf("Twintig Tap Pads " FIRMWARE_VERSION "\n");
 

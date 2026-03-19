@@ -11,6 +11,7 @@
 #include "NeoPixels/NeoPixels1.h"
 #include "Periodic.h"
 #include <stdbool.h>
+#include "Timer/Timer.h"
 
 //------------------------------------------------------------------------------
 // Definitions

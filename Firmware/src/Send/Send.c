@@ -53,7 +53,7 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
         .data = (uint8_t*) string,
         .numberOfBytes = strlen(string),
     };
-    char message[256];
+    uint8_t message[256];
     size_t messageSize;
     if (Ximu3DeviceGet()->binaryMode) {
         messageSize = Ximu3DataSerialAccessoryBinary(message, sizeof (message), &ximu3Data);
@@ -175,9 +175,9 @@ static inline __attribute__((always_inline)) size_t Write(const void* const data
 /**
  * @brief Returns the number of bytes lost due to buffer overflow. Calling
  * this function will reset the value.
- * @return Number of samples lost due to buffer overflow.
+ * @return Number of bytes lost due to buffer overflow.
  */
-size_t SendBufferOverflow() {
+size_t SendBufferOverflow(void) {
     const size_t bufferOverflow_ = bufferOverflow;
     bufferOverflow = 0;
     return bufferOverflow_;

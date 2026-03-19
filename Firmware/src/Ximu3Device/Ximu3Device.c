@@ -14,6 +14,7 @@
 #include "SerialNumber/SerialNumber.h"
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
 #include "Timer/Timer.h"
 #include "Timestamp/Timestamp.h"
 #include "Usb/UsbCdc.h"
@@ -294,7 +295,7 @@ static bool OverrideReadOnly(void* const context) {
 
 /**
  * @brief Error handler.
- * @param error error.
+ * @param error Error.
  * @param context Context.
  */
 static void Error(const char* const error, void* const context) {

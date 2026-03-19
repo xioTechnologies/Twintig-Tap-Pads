@@ -105,6 +105,7 @@ void TapTasks(void) {
  * @param holdoff Holdoff.
  * @param value Value.
  * @param string String.
+ * @param channel Channel.
  */
 static inline __attribute__((always_inline)) void Detect(uint64_t * const holdoff, const float value, const char* const string, const LedsChannel channel) {
     if (value > Ximu3DeviceGet()->threshold) {

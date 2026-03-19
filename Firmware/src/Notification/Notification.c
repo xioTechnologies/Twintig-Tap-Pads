@@ -8,8 +8,10 @@
 // Includes
 
 #include "Adc/Adc.h"
+#include <inttypes.h>
 #include "Periodic.h"
 #include "Send/Send.h"
+#include <stdint.h>
 
 //------------------------------------------------------------------------------
 // Functions
@@ -28,13 +30,13 @@ void NotificationTasks(void) {
     // ADC buffer overflow
     const uint32_t numberOfSamples = AdcBufferOverflow();
     if (numberOfSamples > 0) {
-        SendError("ADC buffer overflow. %u samples lost.", numberOfSamples);
+        SendError("ADC buffer overflow. %" PRIu32 " samples lost.", numberOfSamples);
     }
 
     // Send buffer overflow
-    const uint32_t bufferOverflow = SendBufferOverflow();
+    const size_t bufferOverflow = SendBufferOverflow();
     if (bufferOverflow > 0) {
-        SendError("USB buffer overflow. %u bytes lost.", bufferOverflow);
+        SendError("USB buffer overflow. %zu bytes lost.", bufferOverflow);
     }
 }
 
