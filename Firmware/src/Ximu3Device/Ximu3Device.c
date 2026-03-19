@@ -124,7 +124,7 @@ static void Default(const char* * const value, Ximu3CommandResponse * const resp
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
-    Ximu3SettingsDefaults(&settings, false);
+    Ximu3SettingsLoadDefaults(&settings, false);
     Ximu3CommandRespond(response);
 }
 
@@ -267,11 +267,11 @@ static void NvmWrite(const void* const data, const size_t numberOfBytes, void* c
 static void InitialiseEpilogue(void* const context) {
     const char* const firmwareVersion = Ximu3SettingsGet(&settings)->firmwareVersion;
     if (strspn(firmwareVersion, "?") == strlen(firmwareVersion)) { // if NVM blank
-        Ximu3SettingsDefaults(&settings, true);
+        Ximu3SettingsLoadDefaults(&settings, true);
         return;
     }
     if (strncmp(firmwareVersion, FIRMWARE_VERSION, sizeof (FIRMWARE_VERSION)) != 0) { // if firmware changed
-        Ximu3SettingsDefaults(&settings, false);
+        Ximu3SettingsLoadDefaults(&settings, false);
     }
 }
 
