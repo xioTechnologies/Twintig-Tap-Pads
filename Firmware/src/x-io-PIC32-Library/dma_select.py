@@ -1,7 +1,7 @@
 import re
 
 
-def dma_Select(path, new_channels):
+def dma_select(path: str, new_channels: tuple[int, ...]):
     with open(path) as file:
         code = file.read()
 
@@ -26,4 +26,4 @@ def dma_Select(path, new_channels):
         file.write(code)
 
 
-dma_Select("Spi/Spi1DmaTx.c", (0,))
+dma_select("Spi/Spi1DmaTx.c", (0,))
