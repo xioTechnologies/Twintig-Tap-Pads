@@ -294,7 +294,7 @@ static bool OverrideReadOnly(void* const context) {
 }
 
 /**
- * @brief Error handler.
+ * @brief Error callback.
  * @param error Error.
  * @param context Context.
  */
