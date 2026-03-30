@@ -68,7 +68,7 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
  * @param format Format.
  * @param ... Arguments.
  */
-void SendNotification(const char* format, ...) {
+void SendNotification(const char* const format, ...) {
 
     // Create string
     char string[256];
@@ -97,7 +97,7 @@ void SendNotification(const char* format, ...) {
  * @param format Format.
  * @param ... Arguments.
  */
-void SendError(const char* format, ...) {
+void SendError(const char* const format, ...) {
 
     // Create string
     char string[256];

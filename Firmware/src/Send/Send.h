@@ -17,8 +17,8 @@
 // Function declarations
 
 void SendSerialAccessory(const uint64_t timestamp, const char* format, ...);
-void SendNotification(const char* format, ...);
-void SendError(const char* format, ...);
+void SendNotification(const char* const format, ...);
+void SendError(const char* const format, ...);
 void SendResponse(const void* const data, const size_t numberOfBytes);
 size_t SendBufferOverflow(void);
 
