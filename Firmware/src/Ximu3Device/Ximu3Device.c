@@ -25,15 +25,15 @@
 
 static size_t UsbRead(void* const destination, size_t numberOfBytes, void* const context);
 static void UsbWrite(const void* const data, const size_t numberOfBytes, void* const context);
+static void Ping(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Default(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Apply(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Save(const char* * const value, Ximu3CommandResponse * const response, void* const context);
-static void Ping(const char* * const value, Ximu3CommandResponse * const response, void* const context);
+static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context);
+static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Blink(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Strobe(const char* * const value, Ximu3CommandResponse * const response, void* const context);
-static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Factory(const char* * const value, Ximu3CommandResponse * const response, void* const context);
-static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void NvmRead(void* const destination, const size_t numberOfBytes, void* const context);
 static void NvmWrite(const void* const data, const size_t numberOfBytes, void* const context);
 static void InitialiseEpilogue(void* const context);
@@ -49,14 +49,14 @@ static Ximu3CommandInterface interfaces[] = {
 };
 
 static const Ximu3CommandMap commands[] = {
+    {"ping", Ping},
     {"default", Default},
     {"apply", Apply},
     {"save", Save},
-    {"ping", Ping},
-    {"blink", Blink},
-    {"strobe", Strobe},
     {"note", Note},
     {"timestamp", Timestamp},
+    {"blink", Blink},
+    {"strobe", Strobe},
     {"factory", Factory},
 };
 
@@ -120,6 +120,19 @@ static void UsbWrite(const void* const data, const size_t numberOfBytes, void* c
 }
 
 /**
+ * @brief Ping command.
+ * @param value Value.
+ * @param response Response.
+ * @param context Context.
+ */
+static void Ping(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+    if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
+        return;
+    }
+    Ximu3CommandRespondPing(response, Ximu3SettingsGet(&settings)->deviceName, Ximu3SettingsGet(&settings)->serialNumber);
+}
+
+/**
  * @brief Default command.
  * @param value Value.
  * @param response Response.
@@ -161,16 +174,33 @@ static void Save(const char* * const value, Ximu3CommandResponse * const respons
 }
 
 /**
- * @brief Ping command.
+ * @brief Note command.
  * @param value Value.
  * @param response Response.
  * @param context Context.
  */
-static void Ping(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
+static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+    char string[XIMU3_VALUE_SIZE];
+    if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != Ximu3ResultOk) {
         return;
     }
-    Ximu3CommandRespondPing(response, Ximu3SettingsGet(&settings)->deviceName, Ximu3SettingsGet(&settings)->serialNumber);
+    SendNotification(string);
+    Ximu3CommandRespond(response);
+}
+
+/**
+ * @brief Timestamp command.
+ * @param value Value.
+ * @param response Response.
+ * @param context Context.
+ */
+static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+    uint64_t timestamp;
+    if (Ximu3CommandParseNumberU64(value, response, &timestamp) != Ximu3ResultOk) {
+        return;
+    }
+    TimestampSet(timestamp);
+    Ximu3CommandRespond(response);
 }
 
 /**
@@ -202,21 +232,6 @@ static void Strobe(const char* * const value, Ximu3CommandResponse * const respo
 }
 
 /**
- * @brief Note command.
- * @param value Value.
- * @param response Response.
- * @param context Context.
- */
-static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    char string[XIMU3_VALUE_SIZE];
-    if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != Ximu3ResultOk) {
-        return;
-    }
-    SendNotification(string);
-    Ximu3CommandRespond(response);
-}
-
-/**
  * @brief Factory command.
  * @param value Value.
  * @param response Response.
@@ -227,21 +242,6 @@ static void Factory(const char* * const value, Ximu3CommandResponse * const resp
         return;
     }
     factoryMode = true;
-    Ximu3CommandRespond(response);
-}
-
-/**
- * @brief Timestamp command.
- * @param value Value.
- * @param response Response.
- * @param context Context.
- */
-static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    uint64_t timestamp;
-    if (Ximu3CommandParseNumberU64(value, response, &timestamp) != Ximu3ResultOk) {
-        return;
-    }
-    TimestampSet(timestamp);
     Ximu3CommandRespond(response);
 }
 
