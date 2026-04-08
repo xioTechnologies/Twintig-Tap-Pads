@@ -47,6 +47,7 @@ static void Error(const char* const error, void* const context);
 static Ximu3CommandInterface interfaces[] = {
     { .name = "USB", .read = UsbRead, .write = UsbWrite},
 };
+
 static const Ximu3CommandMap commands[] = {
     {"default", Default},
     {"apply", Apply},
@@ -58,12 +59,14 @@ static const Ximu3CommandMap commands[] = {
     {"timestamp", Timestamp},
     {"factory", Factory},
 };
+
 static Ximu3Settings settings = {
     .nvmRead = NvmRead,
     .nvmWrite = NvmWrite,
     .initialiseEpilogue = InitialiseEpilogue,
     .defaultsEpilogue = DefaultsEpilogue,
 };
+
 static Ximu3CommandBridge bridge = {
     .interfaces = interfaces,
     .numberOfInterfaces = sizeof (interfaces) / sizeof (Ximu3CommandInterface),
@@ -73,6 +76,7 @@ static Ximu3CommandBridge bridge = {
     .overrideReadOnly = OverrideReadOnly,
     .error = Error,
 };
+
 static bool factoryMode;
 
 //------------------------------------------------------------------------------
