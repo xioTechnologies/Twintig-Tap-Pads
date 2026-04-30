@@ -180,7 +180,7 @@ static void Save(const char* * const value, Ximu3CommandResponse * const respons
  * @param context Context.
  */
 static void Note(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
-    char string[XIMU3_VALUE_SIZE];
+    char string[XIMU3_SIZE_VALUE];
     if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != Ximu3ResultOk) {
         return;
     }
