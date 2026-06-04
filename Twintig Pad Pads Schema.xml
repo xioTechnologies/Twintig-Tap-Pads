@@ -8,11 +8,7 @@
             <Setting key="firmware_version" name="Firmware Version" type="string" readOnly="true"/>
             <Setting key="device_name" name="Device Name" type="string"/>
         </Group>
-        <Group name="Tap Detection" expand="true">
-            <Setting key="high_pass_filter" name="High-Pass Filter" type="bool"/>
-            <Setting key="threshold" name="Threshold" type="number"/>
-            <Setting key="holdoff" name="Holdoff (ms)" type="number"/>
-            <Setting key="send_adc_data" name="Send ADC Data" type="bool"/>
+        <Group name="Data Messages" expand="true">
             <Setting key="binary_mode" name="Binary Mode" type="bool"/>
         </Group>
     </Settings>

@@ -124,10 +124,6 @@
       <logicalFolder name="Send" displayName="Send" projectFiles="true">
         <itemPath>../src/Send/Send.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="Tap" displayName="Tap" projectFiles="true">
-        <itemPath>../src/Tap/Filter.h</itemPath>
-        <itemPath>../src/Tap/Tap.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="Timestamp" displayName="Timestamp" projectFiles="true">
         <itemPath>../src/Timestamp/Timestamp.h</itemPath>
       </logicalFolder>
@@ -169,7 +165,6 @@
         <itemPath>../src/x-io-PIC32-Library/Fifo.h</itemPath>
         <itemPath>../src/x-io-PIC32-Library/Periodic.h</itemPath>
         <itemPath>../src/x-io-PIC32-Library/PeripheralBusClockFrequency.h</itemPath>
-        <itemPath>../src/x-io-PIC32-Library/TrueOnce.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Ximu3Device" displayName="Ximu3Device" projectFiles="true">
         <logicalFolder name="x-IMU3-Device"
@@ -295,10 +290,6 @@
       </logicalFolder>
       <logicalFolder name="Send" displayName="Send" projectFiles="true">
         <itemPath>../src/Send/Send.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="Tap" displayName="Tap" projectFiles="true">
-        <itemPath>../src/Tap/Filter.c</itemPath>
-        <itemPath>../src/Tap/Tap.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Timestamp" displayName="Timestamp" projectFiles="true">
         <itemPath>../src/Timestamp/Timestamp.c</itemPath>

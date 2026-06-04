@@ -9,10 +9,6 @@ static const char* const names[] = {
     "Bootloader Version",
     "Firmware Version",
     "Device Name",
-    "High-pass Filter",
-    "Threshold",
-    "Holdoff",
-    "Send ADC Data",
     "Binary Mode",
 };
 
@@ -23,10 +19,6 @@ static const char* const keys[] = {
     "bootloader_version",
     "firmware_version",
     "device_name",
-    "high_pass_filter",
-    "threshold",
-    "holdoff",
-    "send_adc_data",
     "binary_mode",
 };
 
@@ -38,10 +30,6 @@ const MetadataType types[] = {
     MetadataTypeString,
     MetadataTypeString,
     MetadataTypeBool,
-    MetadataTypeFloat,
-    MetadataTypeUint32,
-    MetadataTypeBool,
-    MetadataTypeBool,
 };
 
 const size_t sizes[] = {
@@ -51,10 +39,6 @@ const size_t sizes[] = {
     sizeof (((Ximu3SettingsValues *) 0)->bootloaderVersion),
     sizeof (((Ximu3SettingsValues *) 0)->firmwareVersion),
     sizeof (((Ximu3SettingsValues *) 0)->deviceName),
-    sizeof (((Ximu3SettingsValues *) 0)->highPassFilter),
-    sizeof (((Ximu3SettingsValues *) 0)->threshold),
-    sizeof (((Ximu3SettingsValues *) 0)->holdoff),
-    sizeof (((Ximu3SettingsValues *) 0)->sendAdcData),
     sizeof (((Ximu3SettingsValues *) 0)->binaryMode),
 };
 
@@ -66,10 +50,6 @@ const void* const defaults[] = {
     (void*) (&(char[32]) {"Unknown"}),
     (void*) (&(char[32]) {"Twintig Tap Pads"}),
     (void*) (&(bool) {true}),
-    (void*) (&(float) {-0.02f}),
-    (void*) (&(uint32_t) {250}),
-    (void*) (&(bool) {true}),
-    (void*) (&(bool) {true}),
 };
 
 const bool preserveds[] = {
@@ -77,10 +57,6 @@ const bool preserveds[] = {
     true,
     true,
     true,
-    false,
-    false,
-    false,
-    false,
     false,
     false,
     false,
@@ -92,10 +68,6 @@ const bool readOnlys[] = {
     true,
     true,
     true,
-    false,
-    false,
-    false,
-    false,
     false,
     false,
 };
@@ -114,14 +86,6 @@ static void* GetValue(Ximu3Settings * const settings, const Ximu3SettingsIndex i
             return &settings->values.firmwareVersion;
         case Ximu3SettingsIndexDeviceName:
             return &settings->values.deviceName;
-        case Ximu3SettingsIndexHighPassFilter:
-            return &settings->values.highPassFilter;
-        case Ximu3SettingsIndexThreshold:
-            return &settings->values.threshold;
-        case Ximu3SettingsIndexHoldoff:
-            return &settings->values.holdoff;
-        case Ximu3SettingsIndexSendAdcData:
-            return &settings->values.sendAdcData;
         case Ximu3SettingsIndexBinaryMode:
             return &settings->values.binaryMode;
 

@@ -11,9 +11,7 @@
 
 typedef enum {
     MetadataTypeBool,
-    MetadataTypeFloat,
     MetadataTypeString,
-    MetadataTypeUint32,
 } MetadataType;
 
 typedef struct {

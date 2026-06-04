@@ -40,26 +40,6 @@
             "default": "{\"Twintig Tap Pads\"}"
         },
         {
-            "name": "High-pass filter",
-            "declaration": "bool name",
-            "default": "{true}"
-        },
-        {
-            "name": "Threshold",
-            "declaration": "float name",
-            "default": "{-0.02f}"
-        },
-        {
-            "name": "Holdoff",
-            "declaration": "uint32_t name",
-            "default": "{250}"
-        },
-        {
-            "name": "Send ADC data",
-            "declaration": "bool name",
-            "default": "{true}"
-        },
-        {
             "name": "Binary mode",
             "declaration": "bool name",
             "default": "{true}"

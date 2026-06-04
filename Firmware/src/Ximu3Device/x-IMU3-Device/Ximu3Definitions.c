@@ -22,18 +22,6 @@ Ximu3Result Ximu3SettingsIndexFrom(Ximu3SettingsIndex * const index, const int i
         case Ximu3SettingsIndexDeviceName:
             *index = Ximu3SettingsIndexDeviceName;
             break;
-        case Ximu3SettingsIndexHighPassFilter:
-            *index = Ximu3SettingsIndexHighPassFilter;
-            break;
-        case Ximu3SettingsIndexThreshold:
-            *index = Ximu3SettingsIndexThreshold;
-            break;
-        case Ximu3SettingsIndexHoldoff:
-            *index = Ximu3SettingsIndexHoldoff;
-            break;
-        case Ximu3SettingsIndexSendAdcData:
-            *index = Ximu3SettingsIndexSendAdcData;
-            break;
         case Ximu3SettingsIndexBinaryMode:
             *index = Ximu3SettingsIndexBinaryMode;
             break;

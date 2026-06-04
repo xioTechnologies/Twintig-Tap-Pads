@@ -21,9 +21,7 @@
 
 static void Append(char* const destination, const size_t destinationSize, const char* const string);
 static JsonResult ParseBool(Ximu3Settings * const settings, const Ximu3SettingsIndex index, const char* * const value, const bool overrideReadOnly);
-static JsonResult ParseFloat(Ximu3Settings * const settings, const Ximu3SettingsIndex index, const char* * const value, const bool overrideReadOnly);
 static JsonResult ParseString(Ximu3Settings * const settings, const Ximu3SettingsIndex index, const char* * const value, const bool overrideReadOnly);
-static JsonResult ParseUint32(Ximu3Settings * const settings, const Ximu3SettingsIndex index, const char* * const value, const bool overrideReadOnly);
 
 //------------------------------------------------------------------------------
 // Functions
@@ -73,14 +71,8 @@ void Ximu3SettingsJsonGetValue(Ximu3Settings * const settings, char* const desti
         case MetadataTypeBool:
             snprintf(destination, destinationSize, "%s", *(bool*) metadata.value ? "true" : "false");
             break;
-        case MetadataTypeFloat:
-            snprintf(destination, destinationSize, "%f", *(float*) metadata.value);
-            break;
         case MetadataTypeString:
             snprintf(destination, destinationSize, "\"%s\"", (char*) metadata.value);
-            break;
-        case MetadataTypeUint32:
-            snprintf(destination, destinationSize, "%" PRIu32, *(uint32_t *) metadata.value);
             break;
     }
 }
@@ -185,12 +177,8 @@ JsonResult Ximu3SettingsJsonSetKeyValue(Ximu3Settings * const settings, const ch
     switch (metadata.type) {
         case MetadataTypeBool:
             return ParseBool(settings, index, value, overrideReadOnly);
-        case MetadataTypeFloat:
-            return ParseFloat(settings, index, value, overrideReadOnly);
         case MetadataTypeString:
             return ParseString(settings, index, value, overrideReadOnly);
-        case MetadataTypeUint32:
-            return ParseUint32(settings, index, value, overrideReadOnly);
     }
     return JsonResultOk; // avoid compiler warning
 }
@@ -214,24 +202,6 @@ static JsonResult ParseBool(Ximu3Settings * const settings, const Ximu3SettingsI
 }
 
 /**
- * @brief Parse value representing a float.
- * @param settings Settings.
- * @param index Index.
- * @param value Value.
- * @param overrideReadOnly True to override read-only.
- * @return Result.
- */
-static JsonResult ParseFloat(Ximu3Settings * const settings, const Ximu3SettingsIndex index, const char* * const value, const bool overrideReadOnly) {
-    float number;
-    const JsonResult result = JsonParseNumber(value, &number);
-    if (result != JsonResultOk) {
-        return result;
-    }
-    Ximu3SettingsSet(settings, index, &number, overrideReadOnly);
-    return JsonResultOk;
-}
-
-/**
  * @brief Parse value representing a string.
  * @param settings Settings.
  * @param index Index.
@@ -246,25 +216,6 @@ static JsonResult ParseString(Ximu3Settings * const settings, const Ximu3Setting
         return result;
     }
     Ximu3SettingsSet(settings, index, string, overrideReadOnly);
-    return JsonResultOk;
-}
-
-/**
- * @brief Parse value representing a uint32_t.
- * @param settings Settings.
- * @param index Index.
- * @param value Value.
- * @param overrideReadOnly True to override read-only.
- * @return Result.
- */
-static JsonResult ParseUint32(Ximu3Settings * const settings, const Ximu3SettingsIndex index, const char* * const value, const bool overrideReadOnly) {
-    float numberFloat;
-    const JsonResult result = JsonParseNumber(value, &numberFloat);
-    if (result != JsonResultOk) {
-        return result;
-    }
-    const uint32_t numberUint32 = (uint32_t) numberFloat;
-    Ximu3SettingsSet(settings, index, &numberUint32, overrideReadOnly);
     return JsonResultOk;
 }
 

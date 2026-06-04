@@ -8,7 +8,7 @@
 
 #define XIMU3_MAX_KEY_LENGTH (18)
 
-#define XIMU3_NUMBER_OF_SETTINGS (11)
+#define XIMU3_NUMBER_OF_SETTINGS (7)
 
 #define XIMU3_TERMINATION '\n'
 
@@ -30,10 +30,6 @@ typedef struct {
     char bootloaderVersion[32];
     char firmwareVersion[32];
     char deviceName[32];
-    bool highPassFilter;
-    float threshold;
-    uint32_t holdoff;
-    bool sendAdcData;
     bool binaryMode;
 } Ximu3SettingsValues;
 
@@ -44,10 +40,6 @@ typedef enum {
     Ximu3SettingsIndexBootloaderVersion,
     Ximu3SettingsIndexFirmwareVersion,
     Ximu3SettingsIndexDeviceName,
-    Ximu3SettingsIndexHighPassFilter,
-    Ximu3SettingsIndexThreshold,
-    Ximu3SettingsIndexHoldoff,
-    Ximu3SettingsIndexSendAdcData,
     Ximu3SettingsIndexBinaryMode,
 } Ximu3SettingsIndex;
 

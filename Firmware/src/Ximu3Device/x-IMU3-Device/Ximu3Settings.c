@@ -7,8 +7,6 @@
 //------------------------------------------------------------------------------
 // Includes
 
-#include <ctype.h>
-#include <math.h>
 #include "Metadata.h"
 #include <string.h>
 #include "Ximu3Settings.h"
@@ -17,7 +15,6 @@
 // Function declarations
 
 static void SetValue(const Metadata * const metadata, const void* const value);
-static bool IsNanOrInf(const float value);
 static void CopyString(char* const destination, const size_t destinationSize, const char* string);
 
 //------------------------------------------------------------------------------
@@ -121,13 +118,6 @@ static void SetValue(const Metadata * const metadata, const void* const value) {
     // Set value
     switch (metadata->type) {
         case MetadataTypeBool:
-        case MetadataTypeUint32:
-            memcpy(metadata->value, value, metadata->size);
-            return;
-        case MetadataTypeFloat:
-            if (IsNanOrInf(*(float*) value)) {
-                break;
-            }
             memcpy(metadata->value, value, metadata->size);
             return;
         case MetadataTypeString:
@@ -135,15 +125,6 @@ static void SetValue(const Metadata * const metadata, const void* const value) {
             return;
     }
     memcpy(metadata->value, metadata->defaultValue, metadata->size);
-}
-
-/**
- * @brief Returns true if NaN or Inf.
- * @param value Value.
- * @return True if NaN or Inf.
- */
-static bool IsNanOrInf(const float value) {
-    return isnan(value) || isinf(value);
 }
 
 /**
