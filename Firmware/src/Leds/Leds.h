@@ -44,6 +44,14 @@ typedef union {
     uint32_t rgb;
 } LedsColour;
 
+/**
+ * @brief Result.
+ */
+typedef enum {
+    LedResultOk,
+    LedResultError,
+} LedsResult;
+
 //------------------------------------------------------------------------------
 // Variable declarations
 
@@ -61,8 +69,10 @@ extern const LedsColour ledsColourBlack;
 // Function declarations
 
 void LedsTasks(void);
-void LedsBlink(const LedsChannel channel, const LedsColour colour);
-void LedsStrobe(void);
+LedsResult LedsBlink(const LedsChannel channel, const LedsColour colour);
+LedsResult LedsStrobe(void);
+void LedsOverride(const LedsColour * const colours);
+void LedsDisableOverride(void);
 
 #endif
 

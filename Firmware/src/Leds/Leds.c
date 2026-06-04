@@ -21,7 +21,8 @@
  */
 typedef enum {
     BrightnessLow = 7,
-    BrightnessHigh = 4,
+    BrightnessMedium = 4,
+    BrightnessHigh = 0,
 } Brightness;
 
 //------------------------------------------------------------------------------
@@ -46,6 +47,7 @@ static bool blinkPending;
 static LedsChannel blinkChannel;
 static LedsColour blinkColour;
 static uint64_t strobeTimeout;
+static bool override;
 
 //------------------------------------------------------------------------------
 // Functions
@@ -56,6 +58,11 @@ static uint64_t strobeTimeout;
  */
 void LedsTasks(void) {
 
+    // Do nothing while override enabled
+    if (override) {
+        return;
+    }
+
     // Do nothing else until polling period elapsed
     if (PERIODIC_POLL(0.1f) == false) {
         return;
@@ -65,13 +72,13 @@ void LedsTasks(void) {
     if (TimerGetTicks64() < strobeTimeout) {
         static int counter;
         counter++;
-        SetLeds(LedsChannelAll, (counter & 1) != 0 ? ledsColourWhite : ledsColourBlack, BrightnessHigh);
+        SetLeds(LedsChannelAll, (counter & 1) != 0 ? ledsColourWhite : ledsColourBlack, BrightnessMedium);
         return;
     }
 
     // Blink
     if (blinkPending) {
-        SetLeds(blinkChannel, blinkColour, BrightnessHigh);
+        SetLeds(blinkChannel, blinkColour, BrightnessMedium);
         blinkPending = false;
         return;
     }
@@ -102,18 +109,51 @@ static inline __attribute__((always_inline)) void SetLeds(const LedsChannel chan
 
 /**
  * @brief Blinks the LEDs.
+ * @return Result.
  */
-void LedsBlink(const LedsChannel channel, const LedsColour colour) {
+LedsResult LedsBlink(const LedsChannel channel, const LedsColour colour) {
+    if (override) {
+        return LedResultError;
+    }
     blinkPending = true;
     blinkChannel = channel;
     blinkColour = colour;
+    return LedResultOk;
 }
 
 /**
  * @brief Strobes the LEDs.
+ * @return Result.
  */
-void LedsStrobe(void) {
+LedsResult LedsStrobe(void) {
+    if (override) {
+        return LedResultError;
+    }
     strobeTimeout = TimerGetTicks64() + (5 * TIMER_TICKS_PER_SECOND);
+    return LedResultOk;
+}
+
+/**
+ * @brief Overrides the LEDs.
+ * @param colours Colours. Must be an array of 8 elements.
+ */
+void LedsOverride(const LedsColour * const colours) {
+    override = true;
+    SetLeds(LedsChannelCh1, colours[0], BrightnessHigh);
+    SetLeds(LedsChannelCh2, colours[1], BrightnessHigh);
+    SetLeds(LedsChannelCh3, colours[2], BrightnessHigh);
+    SetLeds(LedsChannelCh4, colours[3], BrightnessHigh);
+    SetLeds(LedsChannelCh5, colours[4], BrightnessHigh);
+    SetLeds(LedsChannelCh6, colours[5], BrightnessHigh);
+    SetLeds(LedsChannelCh7, colours[6], BrightnessHigh);
+    SetLeds(LedsChannelCh8, colours[7], BrightnessHigh);
+}
+
+/**
+ * @brief Restores the LED.
+ */
+void LedsDisableOverride(void) {
+    override = false;
 }
 
 //------------------------------------------------------------------------------

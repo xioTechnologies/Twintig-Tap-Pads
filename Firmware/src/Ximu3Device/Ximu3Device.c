@@ -13,6 +13,7 @@
 #include "Send/Send.h"
 #include "SerialNumber/SerialNumber.h"
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 #include "Timer/Timer.h"
@@ -33,6 +34,7 @@ static void Note(const char* * const value, Ximu3CommandResponse * const respons
 static void Timestamp(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Blink(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Strobe(const char* * const value, Ximu3CommandResponse * const response, void* const context);
+static void Colour(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Factory(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void NvmRead(void* const destination, const size_t numberOfBytes, void* const context);
 static void NvmWrite(const void* const data, const size_t numberOfBytes, void* const context);
@@ -57,6 +59,8 @@ static const Ximu3CommandMap commands[] = {
     {"timestamp", Timestamp},
     {"blink", Blink},
     {"strobe", Strobe},
+    {"colour", Colour},
+    {"color", Colour},
     {"factory", Factory},
 };
 
@@ -213,7 +217,10 @@ static void Blink(const char* * const value, Ximu3CommandResponse * const respon
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
-    LedsBlink(LedsChannelAll, ledsColourWhite);
+    if (LedsBlink(LedsChannelAll, ledsColourWhite) != LedResultOk) {
+        Ximu3CommandRespondError(response, "LED override enabled");
+        return;
+    }
     Ximu3CommandRespond(response);
 }
 
@@ -227,7 +234,52 @@ static void Strobe(const char* * const value, Ximu3CommandResponse * const respo
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
+    if (LedsStrobe() != LedResultOk) {
+        Ximu3CommandRespondError(response, "LED override enabled");
+        return;
+    }
     LedsStrobe();
+    Ximu3CommandRespond(response);
+}
+
+/**
+ * @brief Colour command.
+ * @param value Value.
+ * @param response Response.
+ * @param context Context.
+ */
+static void Colour(const char* * const value, Ximu3CommandResponse * const response, void* const context) {
+
+    // Parse null
+    if (JsonParseNull(value) == JsonResultOk) {
+        LedsDisableOverride();
+        Ximu3CommandRespond(response);
+        return;
+    }
+
+    // Parse string
+    char string[XIMU3_SIZE_VALUE];
+    if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != Ximu3ResultOk) {
+        return;
+    }
+
+    // Parse RGB hex
+    LedsColour colours[8];
+    if (sscanf(string, "#%X,#%X,#%X,#%X,#%X,#%X,#%X,#%X",
+        &colours[0].rgb,
+        &colours[1].rgb,
+        &colours[2].rgb,
+        &colours[3].rgb,
+        &colours[4].rgb,
+        &colours[5].rgb,
+        &colours[6].rgb,
+        &colours[7].rgb) != 8) {
+        Ximu3CommandRespondError(response, "String format must be #RRGGBB");
+        return;
+    }
+
+    // Override LED
+    LedsOverride(colours);
     Ximu3CommandRespond(response);
 }
 
