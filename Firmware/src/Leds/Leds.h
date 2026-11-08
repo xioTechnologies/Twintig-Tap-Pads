@@ -1,7 +1,7 @@
 /**
  * @file Leds.h
  * @author Seb Madgwick
- * @brief Leds.
+ * @brief LEDs.
  */
 
 #ifndef LEDS_H
@@ -48,8 +48,8 @@ typedef union {
  * @brief Result.
  */
 typedef enum {
-    LedResultOk,
-    LedResultError,
+    LedsResultOk,
+    LedsResultError,
 } LedsResult;
 
 //------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 /**
  * @file Leds.c
  * @author Seb Madgwick
- * @brief Leds.
+ * @brief LEDs.
  */
 
 //------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ void LedsTasks(void) {
 }
 
 /**
- * @brief Sets the PWM.
+ * @brief Sets the LEDs.
  * @param channel Channel.
  * @param colour Colour.
  * @param brightness Brightness.
@@ -109,16 +109,18 @@ static inline __attribute__((always_inline)) void SetLeds(const LedsChannel chan
 
 /**
  * @brief Blinks the LEDs.
+ * @param channel Channel.
+ * @param colour Colour.
  * @return Result.
  */
 LedsResult LedsBlink(const LedsChannel channel, const LedsColour colour) {
     if (override) {
-        return LedResultError;
+        return LedsResultError;
     }
     blinkPending = true;
     blinkChannel = channel;
     blinkColour = colour;
-    return LedResultOk;
+    return LedsResultOk;
 }
 
 /**
@@ -127,10 +129,10 @@ LedsResult LedsBlink(const LedsChannel channel, const LedsColour colour) {
  */
 LedsResult LedsStrobe(void) {
     if (override) {
-        return LedResultError;
+        return LedsResultError;
     }
     strobeTimeout = TimerGetTicks64() + (5 * TIMER_TICKS_PER_SECOND);
-    return LedResultOk;
+    return LedsResultOk;
 }
 
 /**
@@ -150,7 +152,7 @@ void LedsOverride(const LedsColour * const colours) {
 }
 
 /**
- * @brief Restores the LED.
+ * @brief Disables the override.
  */
 void LedsDisableOverride(void) {
     override = false;

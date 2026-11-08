@@ -34,11 +34,11 @@ static size_t bufferOverflow;
 
 /**
  * @brief Sends a serial accessory message.
- * @param timestamp Timestamp.
+ * @param ticks Ticks.
  * @param format Format.
  * @param ... Arguments.
  */
-void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
+__attribute__((format(printf, 2, 3))) void SendSerialAccessory(const uint64_t ticks, const char* const format, ...) {
 
     // Create string
     char string[256];
@@ -49,7 +49,7 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
 
     // Send message
     const Ximu3DataSerialAccessory ximu3Data = {
-        .timestamp = TimestampFrom(timestamp),
+        .timestamp = TimestampFrom(ticks),
         .data = (uint8_t*) string,
         .numberOfBytes = strlen(string),
     };
@@ -68,10 +68,10 @@ void SendSerialAccessory(const uint64_t timestamp, const char* format, ...) {
  * @param format Format.
  * @param ... Arguments.
  */
-void SendNotification(const char* const format, ...) {
+__attribute__((format(printf, 1, 2))) void SendNotification(const char* const format, ...) {
 
     // Create string
-    char string[XIMU3_SIZE_NOTIFICATION];
+    char string[XIMU3_SIZE_CHAR_ARRAY];
     va_list arguments;
     va_start(arguments, format);
     vsnprintf(string, sizeof (string), format, arguments);
@@ -80,9 +80,9 @@ void SendNotification(const char* const format, ...) {
     // Send message
     const Ximu3DataNotification ximu3Data = {
         .timestamp = TimestampGet(),
-        .notification = string
+        .notification = string,
     };
-    uint8_t message[128];
+    uint8_t message[XIMU3_SIZE_NOTIFICATION];
     size_t messageSize;
     if (Ximu3DeviceGet()->binaryMode) {
         messageSize = Ximu3BinaryNotification(message, sizeof (message), &ximu3Data);
@@ -97,10 +97,10 @@ void SendNotification(const char* const format, ...) {
  * @param format Format.
  * @param ... Arguments.
  */
-void SendError(const char* const format, ...) {
+__attribute__((format(printf, 1, 2))) void SendError(const char* const format, ...) {
 
     // Create string
-    char string[XIMU3_SIZE_ERROR];
+    char string[XIMU3_SIZE_CHAR_ARRAY];
     va_list arguments;
     va_start(arguments, format);
     vsnprintf(string, sizeof (string), format, arguments);
@@ -109,9 +109,9 @@ void SendError(const char* const format, ...) {
     // Send message
     const Ximu3DataError ximu3Data = {
         .timestamp = TimestampGet(),
-        .error = string
+        .error = string,
     };
-    uint8_t message[128];
+    uint8_t message[XIMU3_SIZE_ERROR];
     size_t messageSize;
     if (Ximu3DeviceGet()->binaryMode) {
         messageSize = Ximu3BinaryError(message, sizeof (message), &ximu3Data);
@@ -157,7 +157,7 @@ void SendResponse(const void* const data, const size_t numberOfBytes) {
  * @param data Data.
  * @param numberOfBytes Number of bytes.
  * @param priority True to write with priority.
- * @return Number of samples lost due to buffer overflow.
+ * @return Number of bytes lost due to buffer overflow.
  */
 static inline __attribute__((always_inline)) size_t Write(const void* const data, const size_t numberOfBytes, const bool priority) {
     if (UsbCdcPortOpen() == false) {

@@ -1,6 +1,17 @@
-<DeviceSettings>
+<Schema name="Twintig Tap Pads">
+    <Commands>
+        <Command key="ping"/>
+        <Command key="default"/>
+        <Command key="apply"/>
+        <Command key="save"/>
+        <Command key="note"/>
+        <Command key="timestamp"/>
+        <Command key="blink"/>
+        <Command key="strobe"/>
+        <Command key="colour"/>
+    </Commands>
     <Settings>
-        <Group name="Device Information" expand="true">
+        <Group name="Device Information">
             <Setting key="model" name="Model" type="string" readOnly="true"/>
             <Setting key="serial_number" name="Serial Number" type="string" readOnly="true"/>
             <Setting key="hardware_version" name="Hardware Version" type="string" readOnly="true"/>
@@ -8,8 +19,8 @@
             <Setting key="firmware_version" name="Firmware Version" type="string" readOnly="true"/>
             <Setting key="device_name" name="Device Name" type="string"/>
         </Group>
-        <Group name="Data Messages" expand="true">
+        <Group name="Data Messages">
             <Setting key="binary_mode" name="Binary Mode" type="bool"/>
         </Group>
     </Settings>
-</DeviceSettings>
+</Schema>

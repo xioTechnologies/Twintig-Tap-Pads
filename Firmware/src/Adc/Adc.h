@@ -19,7 +19,7 @@
  * @brief ADC data.
  */
 typedef struct {
-    uint64_t timestamp;
+    uint64_t ticks;
     float ch1;
     float ch2;
     float ch3;

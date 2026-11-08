@@ -65,7 +65,7 @@ int main(void) {
         // Send ADC data
         AdcData data;
         if (AdcGetData(&data) == AdcResultOk) {
-            SendSerialAccessory(data.timestamp, "%f,%f,%f,%f,%f,%f,%f,%f\n", data.ch1, data.ch2, data.ch3, data.ch4, data.ch5, data.ch6, data.ch7, data.ch8);
+            SendSerialAccessory(data.ticks, "%f,%f,%f,%f,%f,%f,%f,%f\n", data.ch1, data.ch2, data.ch3, data.ch4, data.ch5, data.ch6, data.ch7, data.ch8);
         }
     }
     return (EXIT_FAILURE);

@@ -13,10 +13,9 @@
 #include "Send/Send.h"
 #include "SerialNumber/SerialNumber.h"
 #include <stdbool.h>
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
-#include "Timer/Timer.h"
 #include "Timestamp/Timestamp.h"
 #include "Usb/UsbCdc.h"
 #include "x-IMU3-Device/Ximu3.h"
@@ -189,7 +188,7 @@ static void Note(const char* * const value, Ximu3CommandResponse * const respons
     if (Ximu3CommandParseString(value, response, string, sizeof (string), NULL) != Ximu3ResultOk) {
         return;
     }
-    SendNotification(string);
+    SendNotification("%s", string);
     Ximu3CommandRespond(response);
 }
 
@@ -218,7 +217,7 @@ static void Blink(const char* * const value, Ximu3CommandResponse * const respon
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
-    if (LedsBlink(LedsChannelAll, ledsColourWhite) != LedResultOk) {
+    if (LedsBlink(LedsChannelAll, ledsColourWhite) != LedsResultOk) {
         Ximu3CommandRespondError(response, "LED override enabled");
         return;
     }
@@ -235,11 +234,10 @@ static void Strobe(const char* * const value, Ximu3CommandResponse * const respo
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
-    if (LedsStrobe() != LedResultOk) {
+    if (LedsStrobe() != LedsResultOk) {
         Ximu3CommandRespondError(response, "LED override enabled");
         return;
     }
-    LedsStrobe();
     Ximu3CommandRespond(response);
 }
 
@@ -275,11 +273,11 @@ static void Colour(const char* * const value, Ximu3CommandResponse * const respo
         &colours[5].rgb,
         &colours[6].rgb,
         &colours[7].rgb) != 8) {
-        Ximu3CommandRespondError(response, "String format must be #RRGGBB");
+        Ximu3CommandRespondError(response, "String format must be #RRGGBB,#...");
         return;
     }
 
-    // Override LED
+    // Override LEDs
     LedsOverride(colours);
     Ximu3CommandRespond(response);
 }
@@ -349,6 +347,7 @@ static void DefaultsEpilogue(void* const context) {
 
 /**
  * @brief Returns true if factory mode enabled.
+ * @param context Context.
  * @return True if factory mode enabled.
  */
 static bool OverrideReadOnly(void* const context) {
