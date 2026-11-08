@@ -362,11 +362,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>5.10</languageToolchainVersion>
+        <languageToolchainVersion>6.00</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.5.173"/>
+        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.6.179"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
