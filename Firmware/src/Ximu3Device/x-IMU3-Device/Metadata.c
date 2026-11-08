@@ -22,7 +22,7 @@ static const char* const keys[] = {
     "binary_mode",
 };
 
-const MetadataType types[] = {
+static const MetadataType types[] = {
     MetadataTypeString,
     MetadataTypeString,
     MetadataTypeString,
@@ -32,18 +32,18 @@ const MetadataType types[] = {
     MetadataTypeBool,
 };
 
-const size_t sizes[] = {
-    sizeof (((Ximu3SettingsValues *) 0)->model),
-    sizeof (((Ximu3SettingsValues *) 0)->serialNumber),
-    sizeof (((Ximu3SettingsValues *) 0)->hardwareVersion),
-    sizeof (((Ximu3SettingsValues *) 0)->bootloaderVersion),
-    sizeof (((Ximu3SettingsValues *) 0)->firmwareVersion),
-    sizeof (((Ximu3SettingsValues *) 0)->deviceName),
-    sizeof (((Ximu3SettingsValues *) 0)->binaryMode),
+static const size_t sizes[] = {
+    sizeof (((Ximu3SettingsValues*) 0)->model),
+    sizeof (((Ximu3SettingsValues*) 0)->serialNumber),
+    sizeof (((Ximu3SettingsValues*) 0)->hardwareVersion),
+    sizeof (((Ximu3SettingsValues*) 0)->bootloaderVersion),
+    sizeof (((Ximu3SettingsValues*) 0)->firmwareVersion),
+    sizeof (((Ximu3SettingsValues*) 0)->deviceName),
+    sizeof (((Ximu3SettingsValues*) 0)->binaryMode),
 };
 
-const void* const defaults[] = {
-    (void*) (&(char[32]) {"Twintig Pad Pads"}),
+static const void* const defaults[] = {
+    (void*) (&(char[32]) {"Twintig Tap Pads"}),
     (void*) (&(char[32]) {"Unknown"}),
     (void*) (&(char[32]) {"Unknown"}),
     (void*) (&(char[32]) {"Unknown"}),
@@ -52,7 +52,7 @@ const void* const defaults[] = {
     (void*) (&(bool) {true}),
 };
 
-const bool preserveds[] = {
+static const bool preserveds[] = {
     true,
     true,
     true,
@@ -62,7 +62,7 @@ const bool preserveds[] = {
     false,
 };
 
-const bool readOnlys[] = {
+static const bool readOnlys[] = {
     true,
     true,
     true,
@@ -90,7 +90,7 @@ static void* GetValue(Ximu3Settings * const settings, const Ximu3SettingsIndex i
             return &settings->values.binaryMode;
 
     }
-    return NULL; // avoid compiler warning
+    return NULL; // unreachable code: -Werror=switch
 }
 
 Metadata MetadataGet(Ximu3Settings * const settings, const Ximu3SettingsIndex index) {

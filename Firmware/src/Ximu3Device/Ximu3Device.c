@@ -24,7 +24,7 @@
 //------------------------------------------------------------------------------
 // Function declarations
 
-static size_t UsbRead(void* const destination, size_t numberOfBytes, void* const context);
+static size_t UsbRead(void* const destination, const size_t numberOfBytes, void* const context);
 static void UsbWrite(const void* const data, const size_t numberOfBytes, void* const context);
 static void Ping(const char* * const value, Ximu3CommandResponse * const response, void* const context);
 static void Default(const char* * const value, Ximu3CommandResponse * const response, void* const context);
@@ -109,7 +109,7 @@ void Ximu3DeviceTasks(void) {
  * @param context Context.
  * @return Number of bytes read.
  */
-static size_t UsbRead(void* const destination, size_t numberOfBytes, void* const context) {
+static size_t UsbRead(void* const destination, const size_t numberOfBytes, void* const context) {
     return UsbCdcRead(destination, numberOfBytes);
 }
 
@@ -133,7 +133,8 @@ static void Ping(const char* * const value, Ximu3CommandResponse * const respons
     if (Ximu3CommandParseNull(value, response) != Ximu3ResultOk) {
         return;
     }
-    Ximu3CommandRespondPing(response, Ximu3SettingsGet(&settings)->deviceName, Ximu3SettingsGet(&settings)->serialNumber);
+    const Ximu3SettingsValues * const settingsValues = Ximu3SettingsGet(&settings);
+    Ximu3CommandRespondPing(response, settingsValues->model, settingsValues->serialNumber, settingsValues->deviceName);
 }
 
 /**
@@ -322,12 +323,17 @@ static void NvmWrite(const void* const data, const size_t numberOfBytes, void* c
  * @param context Context.
  */
 static void InitialiseEpilogue(void* const context) {
-    const char* const firmwareVersion = Ximu3SettingsGet(&settings)->firmwareVersion;
-    if (strspn(firmwareVersion, "?") == strlen(firmwareVersion)) { // if NVM blank
+
+    // Load all defaults if NVM blank
+    const char* const serialNumber = Ximu3SettingsGet(&settings)->serialNumber;
+    if (strspn(serialNumber, "?") == strlen(serialNumber)) { // 0xFF will be replaced with '?' when read as a string
         Ximu3SettingsLoadDefaults(&settings, true);
         return;
     }
-    if (strncmp(firmwareVersion, FIRMWARE_VERSION, sizeof (FIRMWARE_VERSION)) != 0) { // if firmware changed
+
+    // Load non-preserved defaults if firmware changed
+    const char* const firmwareVersion = Ximu3SettingsGet(&settings)->firmwareVersion;
+    if (strncmp(firmwareVersion, FIRMWARE_VERSION, sizeof (FIRMWARE_VERSION)) != 0) {
         Ximu3SettingsLoadDefaults(&settings, false);
     }
 }

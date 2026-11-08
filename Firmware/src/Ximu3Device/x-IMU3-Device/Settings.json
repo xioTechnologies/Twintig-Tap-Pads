@@ -7,40 +7,40 @@
         {
             "name": "Model",
             "declaration": "char name[32]",
-            "default": "{\"Twintig Pad Pads\"}",
+            "default": "{\"Twintig Tap Pads\"}",
             "preserved": true
         },
         {
-            "name": "Serial number",
+            "name": "Serial Number",
             "declaration": "char name[32]",
             "default": "{\"Unknown\"}",
             "preserved": true
         },
         {
-            "name": "Hardware version",
+            "name": "Hardware Version",
             "declaration": "char name[32]",
             "default": "{\"Unknown\"}",
             "preserved": true
         },
         {
-            "name": "Bootloader version",
+            "name": "Bootloader Version",
             "declaration": "char name[32]",
             "default": "{\"Unknown\"}",
             "preserved": true
         },
         {
-            "name": "Firmware version",
+            "name": "Firmware Version",
             "declaration": "char name[32]",
             "default": "{\"Unknown\"}",
             "read-only": true
         },
         {
-            "name": "Device name",
+            "name": "Device Name",
             "declaration": "char name[32]",
             "default": "{\"Twintig Tap Pads\"}"
         },
         {
-            "name": "Binary mode",
+            "name": "Binary Mode",
             "declaration": "bool name",
             "default": "{true}"
         }
